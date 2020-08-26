@@ -3,6 +3,7 @@
         <meta charset="utf-8">
         <script src="airtable-browser.js"></script>
         <script defer src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <style>
             *{
                 margin:0;
@@ -17,83 +18,70 @@
             canvas{
                 width: 100%;
             }
-            .preloader-container{
-                margin: 80px 50px 0px 80px;
-                width: calc(100% - 130px);
-                display: flex;
-                flex-direction: row;
-                animation: pulse 1s infinite;
+            #preloader{
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background:white;
             }
-            .preloader-main{
-                width: 70%;
-                display: flex;
-                flex-direction: column;
+            .preloader{
+                position: absolute;
+                top: 50%;
+                left: 50%;
             }
-            .preloader-canvas{
-                width: 100%;
-                padding-top: 53.249%;
-                background-color: #c4c4c4;
+            .preloader-rotater{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 0;
+                width: 0;
+                animation: rotate 1.5s infinite;
+                opacity: 0.2;
             }
-            .preloader-download{
-                width: 250px;
-                height: 50px;
-                background-color: #7c7c7c;
-                border-radius: 10px;
-                margin-top: 15px;
+            .preloader > .preloader-rotater:nth-child(2){
+                animation-delay: 0.1s;
             }
-            .preloader-illustrations{
-                width: 160px;
-                height: 24px;
-                border-radius: 15px;
-                background-color: var(--preloader-text);
-                margin-top: 60px;
+            .preloader > .preloader-rotater:nth-child(3){
+                animation-delay: 0.2s;
             }
-            .preloader-side-menu{
-                width: 30%;
-                min-width: 425px;
-                display: flex;
-                flex-direction: column;
-                box-sizing: border-box;
-                padding-left: 50px;
+            .preloader > .preloader-rotater:nth-child(4){
+                animation-delay: 0.3s;
             }
-            .preloader-text{
-                width: 65px;
-                height: 24px;
-                border-radius: 15px;
-                background-color: var(--preloader-text);
+            .preloader > .preloader-rotater:nth-child(5){
+                animation-delay: 0.4s;
             }
-            .preloader-textarea{
-                width: 100%;
-                height: 200px;
-                background-color: #bebebe;
-                border-radius: 10px;
-                margin-top: 15px;
+            .preloader > .preloader-rotater:nth-child(6){
+                animation-delay: .5s;
             }
-            .preloader-title-settings{
-                display: none;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin-top: 25px;
-            }
-            .preloader-title{
-                width: 90px;
+            .preloader-rotater  > div{
+                position: absolute ;
+                top: -10px;
+                left: -10px;
+                width: 20px;
                 height: 20px;
-                border-radius: 10px;
-                background-color: var(--preloader-text);
+                background: #aaa;
+                border-radius: 100%;
+                transform: translateY(-50px);
             }
-            .preloader-title-checklist{
-                width: 250px;
-                height: 50px;
-                background-color: #bebebe;
-                border-radius: 10px;
+            .preloader-rotater:nth-child(1) > div{
+                background: rgb(255, 0, 0);
             }
-            .preloader-title-colors{
-                margin-top: 60px;
-                width: 140px;
-                height: 24px;
-                border-radius: 15px;
-                background-color: var(--preloader-text);
+            .preloader-rotater:nth-child(2) > div{
+                background: rgb(255, 208, 0);
+            }
+            .preloader-rotater:nth-child(3) > div{
+                background: rgb(51, 255, 0);
+            }
+            .preloader-rotater:nth-child(4) > div{
+                background: rgb(0, 255, 221);
+            }
+            .preloader-rotater:nth-child(5) > div{
+                background: rgb(0, 26, 255);
+            }
+            .preloader-rotater:nth-child(6) > div{
+                background: rgb(255, 0, 234);
             }
             #textSize{
                 display: initial;
@@ -108,60 +96,96 @@
                 50% {opacity: 1;}
                 to {opacity: 0.6;}
             }
+            @keyframes rotate{
+                from {transform: rotate(0deg);}
+                to {transform: rotate(360deg);}
+            }
         </style>
         <link rel="stylesheet" href="./style.css"/>
     </head>
     <body>
         <div id="preloader">
-            <div class="preloader-container">
-                <div class="preloader-main">
-                    <div class="preloader-canvas"></div>
-                    <div class="preloader-download"></div>
-                    <div class="preloader-illustrations"></div>
+            <div class="preloader">
+                <div class="preloader-rotater">
+                    <div></div>
                 </div>
-                <div class="preloader-side-menu">
-                    <div class="preloader-text"></div>
-                    <div class="preloader-textarea"></div>
-                    <div class="preloader-title-settings">
-                        <div class="preloader-title"></div>
-                        <div class="preloader-title-checklist"></div>
-                    </div>
-                    <div class="preloader-title-colors"></div>
+                <div class="preloader-rotater">
+                    <div></div>
+                </div>
+                <div class="preloader-rotater">
+                    <div></div>
+                </div>
+                <div class="preloader-rotater">
+                    <div></div>
+                </div>
+                <div class="preloader-rotater">
+                    <div></div>
+                </div>
+                <div class="preloader-rotater">
+                    <div></div>
                 </div>
             </div>
         </div>
         <span id="textSize"></span>
-        <div id="content">
-            <div class="container row-container">
-                <div class="main column-container">
-                    <canvas id="canvas" width="1108" height="590" class="canvas"></canvas>
-                    <div class="row-container flex-start margin-top-low align-center">
-                        <button id="download">Скачать PNG</button>
-                        <span class="clicker" id="otherFormats">Другой формат...</span>
-                    </div>
-                    <span class="title  margin-top-high">Иллюстрации</span>
-                    <ul id="illustrations" class="illustrations grid margin-top-middle">
-                    </ul>
-                </div>
-                <div class="side-menu column-container">
+        <!--div id="content">
+            <div class="container column-container">
+                <div class="main row-container">
+                    
                     <div class="row-container space-between align-flex-end">
                         <span class="title">Текст</span>
                         <span class="clicker" id="showAdditionalParameters">показать доп.настройки</span>
                     </div>
                     <textarea id="text" class="textarea margin-top-low"></textarea>
-                    <div class="row-container margin-top-middle space-between align-center none">
-                        <label class="option">Заголовок</label>
-                        <input list="titleLineHeightList" name="titleLineHeight" id="titleLineHeight" value="1 строка" class="list ">
-                        <datalist id="titleLineHeightList">
-                          <option value="1 строка">
-                          <option value="2 строки">
-                          <option value="3 строки">
-                        </datalist>
-                    </div>
                     <span class="option margin-top-high">Задний фон</span>
                     <ul id="colors" class="palette grid margin-top-low">
                     </ul>
+                    <canvas id="canvas" width="1108" height="590" class="canvas"></canvas>
+                    <div class="row-container flex-start margin-top-low align-center">
+                        <button id="download">Скачать PNG</button>
+                        <span class="clicker" id="otherFormats">Другой формат...</span>
+                    </div>
                 </div>
+                <div class="side-menu column-container">
+                    <span class="title  margin-top-high">Иллюстрации</span>
+                    <ul id="illustrations" class="illustrations grid margin-top-middle">
+                    </ul>
+                </div>
+            </div>
+        </div-->
+        <div id="content" class="column-container">
+            <div class="main-panel row-container space-between">
+                <div class="output-panel column-container">
+                    <canvas id="canvas" width="100%" height="50%" class="canvas"></canvas>
+                    <span class="label margin-top-middle">Input Your Text</span>
+                    <textarea id="text" class="textarea margin-top-low"></textarea>
+                    <div class="row-container space-between margin-top-middle align-center">
+                        <div class="row-container">
+                            <button id="download">Download PNG</button>
+                            <button id="random" class="transparent">Random image</button>
+                        </div>
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                <path d="M29.5996 11.2002C29.7484 11.2002 34.995 11.2002 37.5996 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                <path d="M10.4004 28.7998C10.2516 28.7998 5.00504 28.7998 2.40039 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                <path d="M29.8004 11.2002C29.8004 13.078 28.2782 14.6002 26.4004 14.6002C24.5226 14.6002 23.0004 13.078 23.0004 11.2002C23.0004 9.32243 24.5226 7.8002 26.4004 7.8002C28.2782 7.8002 29.8004 9.32243 29.8004 11.2002Z" stroke="#FF3366" stroke-width="1.2"/>
+                                <path d="M10.6 29C10.6 27.1222 12.1222 25.6 14 25.6C15.8778 25.6 17.4 27.1222 17.4 29C17.4 30.8778 15.8778 32.4 14 32.4C12.1222 32.4 10.6 30.8778 10.6 29Z" stroke="#FF3366" stroke-width="1.2"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="palette-panel column-container">
+                    <span class="label">Select Background</span>
+                    <ul id="colors" class="palette margin-top-low column-container"></ul>
+                </div>
+            </div>
+            <div class="options-panel"></div>
+            <div class="illustrations-panel margin-top-middle">
+                <span class="label">Select Illusration</span>
+                <input type="text" class="tags text-input margin-top-low" id="filter" placeholder="Find Image by Tag">
+                <ul id="illustrations" class="illustrations grid margin-top-middle">
+                </ul>
             </div>
         </div>
     </body>
