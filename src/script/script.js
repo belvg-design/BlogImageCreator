@@ -263,8 +263,10 @@ let  APP = new (class{
         console.error(err);
     }
     closePreloader(){
-        preloader.style.setProperty("display","none");
-        content.style.setProperty("display","flex");
+        setTimeout(()=>{
+            preloader.style.setProperty("display","none");
+            content.style.setProperty("display","flex");
+        }, 1000);
     }
     draw(){
         this.context.clearRect(0,0,this.current.settings.width, this.current.settings.height);
