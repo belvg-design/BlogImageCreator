@@ -1,0 +1,271 @@
+[
+	{
+		"x": 524,
+		"name": "img_1",
+		"src": "./src/img/img_1.png",
+		"descr": "Data analyze image",
+		"tags": [
+			"data analyze",
+			"display",
+			"workspace",
+			"violet"
+		],
+		"y": 16,
+		"backBlur": "Navy"
+	},
+	{
+		"x": 420,
+		"name": "img_2",
+		"src": "./src/img/img_3.png",
+		"descr": "Mobile interface",
+		"tags": [
+			"mobile",
+			"interface",
+			"ux",
+			"authorization",
+			"violet"
+		],
+		"y": 112
+	},
+	{
+		"x": 500,
+		"name": "img_3",
+		"src": "./src/img/img_2.png",
+		"descr": "E-commerce",
+		"tags": [
+			"ecommerce",
+			"cash",
+			"display",
+			"cart"
+		],
+		"y": 31
+	},
+	{
+		"x": 510,
+		"name": "img_4",
+		"src": "./src/img/img_4.png",
+		"descr": "E-commerce",
+		"tags": [
+			"ecommerce",
+			"cash",
+			"ux",
+			"customer",
+			"pay"
+		],
+		"y": -20
+	},
+	{
+		"x": 520,
+		"name": "img_5",
+		"src": "./src/img/img_5.png",
+		"descr": "-",
+		"tags": [
+			"shopify",
+			"display",
+			"ecommerce",
+			"green"
+		],
+		"y": 23
+	},
+	{
+		"x": 551,
+		"name": "img_6",
+		"src": "./src/img/img_6.png",
+		"descr": "-",
+		"tags": [
+			"community",
+			"team",
+			"deadline",
+			"calendar"
+		],
+		"y": -82
+	},
+	{
+		"x": 500,
+		"name": "img_7",
+		"src": "./src/img/img_7.png",
+		"descr": "-",
+		"tags": [
+			"network",
+			"wifi",
+			"tech",
+			"violet",
+			"blue",
+			"discussion"
+		],
+		"y": 60
+	},
+	{
+		"x": 510,
+		"name": "img_8",
+		"src": "./src/img/img_8.png",
+		"descr": "-",
+		"tags": [
+			"team",
+			"discussion",
+			"diagrams",
+			"infographics",
+			"analyze",
+			"marketing",
+			"brainstorm"
+		],
+		"y": 60
+	},
+	{
+		"x": 520,
+		"name": "img_9",
+		"src": "./src/img/img_9.png",
+		"descr": "-",
+		"tags": [
+			"team",
+			"discussion",
+			"brainstorm",
+			"marketing",
+			"violet"
+		],
+		"y": 20
+	},
+	{
+		"x": 520,
+		"name": "img_10",
+		"src": "./src/img/img_10.png",
+		"descr": "-",
+		"tags": [
+			"customer",
+			"gift",
+			"pay"
+		],
+		"y": 100
+	},
+	{
+		"x": 490,
+		"name": "img_11",
+		"src": "./src/img/img_11.png",
+		"descr": "-",
+		"tags": [
+			"shopify",
+			"programming",
+			"workspace",
+			"tech"
+		],
+		"y": 0
+	},
+	{
+		"x": 460,
+		"name": "img_12",
+		"src": "./src/img/img_12.png",
+		"descr": "-",
+		"tags": [
+			"display",
+			"ecommerce",
+			"cart",
+			"feedback",
+			"sale"
+		],
+		"y": 0
+	},
+	{
+		"x": 600,
+		"name": "img_13",
+		"src": "./src/img/img_13.png",
+		"descr": "-",
+		"tags": [
+			"mobile",
+			"pay",
+			"ecommerce"
+		],
+		"y": 20
+	},
+	{
+		"x": 520,
+		"name": "img_14",
+		"src": "./src/img/img_14.png",
+		"descr": "-",
+		"tags": [
+			"sale",
+			"mobile",
+			"feedback",
+			"ecommerce"
+		],
+		"y": 20
+	},
+	{
+		"x": 520,
+		"name": "img_15",
+		"src": "./src/img/img_15.png",
+		"descr": "-",
+		"tags": [
+			"mobile",
+			"ux",
+			"ecommerce",
+			"violet",
+			"pay"
+		],
+		"y": 20
+	},
+	{
+		"x": 500,
+		"name": "img_16",
+		"src": "./src/img/img_16.png",
+		"descr": "-",
+		"tags": [
+			"team",
+			"deadline",
+			"calendar"
+		],
+		"y": 20
+	},
+	{
+		"x": 520,
+		"name": "img_17",
+		"src": "./src/img/img_17.png",
+		"descr": "-",
+		"tags": [
+			"programming",
+			"workspace",
+			"tech",
+			"blue"
+		],
+		"y": 40
+	},
+	{
+		"x": 450,
+		"name": "img_18",
+		"src": "./src/img/img_18.png",
+		"descr": "-",
+		"tags": [
+			"medicine",
+			"ecommerce",
+			"customer",
+			"pay",
+			"navy",
+			"ux"
+		],
+		"y": 60
+	},
+	{
+		"x": 550,
+		"name": "img_19",
+		"src": "./src/img/img_19.png",
+		"descr": "-",
+		"tags": [
+			"review",
+			"feedback",
+			"star"
+		],
+		"y": 50
+	},
+	{
+		"x": 490,
+		"name": "img_20",
+		"src": "./src/img/img_20.png",
+		"descr": "-",
+		"tags": [
+			"marketing",
+			"analyze",
+			"display",
+			"violet"
+		],
+		"y": 50
+	}
+]

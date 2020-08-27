@@ -1,0 +1,15 @@
+[
+	{
+		"textTop": 511,
+		"textLeft": 87,
+		"fieldColor": "#fff000",
+		"textColor": "black",
+		"width": 1108,
+		"name": "Default",
+		"lineHeight": 72,
+		"fontSize": 68,
+		"text": "Hello\nThis is Image\nCreator!",
+		"height": 590,
+		"titleColor": "white"
+	}
+]

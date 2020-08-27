@@ -1,8 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <script src="airtable-browser.js"></script>
-        <script defer src="script.js"></script>
+        <script defer src="./src/script/script.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <style>
             *{
@@ -101,7 +100,7 @@
                 to {transform: rotate(360deg);}
             }
         </style>
-        <link rel="stylesheet" href="./style.css"/>
+        <link rel="stylesheet" href="./src/css/style.css"/>
     </head>
     <body>
         <div id="preloader">
@@ -152,40 +151,43 @@
                 </div>
             </div>
         </div-->
-        <div id="content" class="column-container">
-            <div class="main-panel row-container space-between">
-                <div class="output-panel column-container">
-                    <canvas id="canvas" width="100%" height="50%" class="canvas"></canvas>
-                    <span class="label margin-top-middle">Input Your Text</span>
-                    <textarea id="text" class="textarea margin-top-low"></textarea>
-                    <div class="row-container space-between margin-top-middle align-center">
-                        <div class="row-container">
-                            <button id="download">Download PNG</button>
-                            <button id="random" class="transparent">Random image</button>
-                        </div>
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
-                                <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
-                                <path d="M29.5996 11.2002C29.7484 11.2002 34.995 11.2002 37.5996 11.2002" stroke="#FF3366" stroke-width="1.2"/>
-                                <path d="M10.4004 28.7998C10.2516 28.7998 5.00504 28.7998 2.40039 28.7998" stroke="#FF3366" stroke-width="1.2"/>
-                                <path d="M29.8004 11.2002C29.8004 13.078 28.2782 14.6002 26.4004 14.6002C24.5226 14.6002 23.0004 13.078 23.0004 11.2002C23.0004 9.32243 24.5226 7.8002 26.4004 7.8002C28.2782 7.8002 29.8004 9.32243 29.8004 11.2002Z" stroke="#FF3366" stroke-width="1.2"/>
-                                <path d="M10.6 29C10.6 27.1222 12.1222 25.6 14 25.6C15.8778 25.6 17.4 27.1222 17.4 29C17.4 30.8778 15.8778 32.4 14 32.4C12.1222 32.4 10.6 30.8778 10.6 29Z" stroke="#FF3366" stroke-width="1.2"/>
-                            </svg>
+        <div class="content-container column-container space-between">
+            <div id="content" class="column-container">
+                <div class="main-panel row-container space-between">
+                    <div class="output-panel column-container">
+                        <canvas id="canvas" width="100%" height="50%" class="canvas"></canvas>
+                        <span class="label margin-top-middle">Input Your Text</span>
+                        <textarea id="text" class="textarea margin-top-low"></textarea>
+                        <div class="row-container space-between margin-top-middle align-center">
+                            <div class="row-container">
+                                <button id="download">Download PNG</button>
+                                <button id="randomize" class="transparent">Random image</button>
+                            </div>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                    <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                    <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                    <path d="M29.5996 11.2002C29.7484 11.2002 34.995 11.2002 37.5996 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                    <path d="M10.4004 28.7998C10.2516 28.7998 5.00504 28.7998 2.40039 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                    <path d="M29.8004 11.2002C29.8004 13.078 28.2782 14.6002 26.4004 14.6002C24.5226 14.6002 23.0004 13.078 23.0004 11.2002C23.0004 9.32243 24.5226 7.8002 26.4004 7.8002C28.2782 7.8002 29.8004 9.32243 29.8004 11.2002Z" stroke="#FF3366" stroke-width="1.2"/>
+                                    <path d="M10.6 29C10.6 27.1222 12.1222 25.6 14 25.6C15.8778 25.6 17.4 27.1222 17.4 29C17.4 30.8778 15.8778 32.4 14 32.4C12.1222 32.4 10.6 30.8778 10.6 29Z" stroke="#FF3366" stroke-width="1.2"/>
+                                </svg>
+                            </div>
                         </div>
                     </div>
+                    <div class="palette-panel column-container">
+                        <span class="label">Select Background</span>
+                        <ul id="colors" class="palette margin-top-low column-container"></ul>
+                    </div>
                 </div>
-                <div class="palette-panel column-container">
-                    <span class="label">Select Background</span>
-                    <ul id="colors" class="palette margin-top-low column-container"></ul>
+                <div class="options-panel"></div>
+                <div class="illustrations-panel margin-top-middle">
+                    <span class="label">Select Illusration</span>
+                    <input type="text" class="tags text-input margin-top-low" id="filter" placeholder="Find Image by Tag">
+                    <div class="tags-bar row-container margin-top-low" id="tags-bar"></div>
+                    <ul id="illustrations" class="illustrations grid margin-top-middle">
+                    </ul>
                 </div>
-            </div>
-            <div class="options-panel"></div>
-            <div class="illustrations-panel margin-top-middle">
-                <span class="label">Select Illusration</span>
-                <input type="text" class="tags text-input margin-top-low" id="filter" placeholder="Find Image by Tag">
-                <ul id="illustrations" class="illustrations grid margin-top-middle">
-                </ul>
             </div>
         </div>
     </body>

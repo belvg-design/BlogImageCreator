@@ -1,0 +1,68 @@
+[
+	{
+		"figure": "FEC738",
+		"name": "Red",
+		"backFirst": "FF7861",
+		"backLast": "C13B11"
+	},
+	{
+		"figure": "FF4D00",
+		"name": "Orange",
+		"backFirst": "FFBA33",
+		"backLast": "F49B96"
+	},
+	{
+		"figure": "9FFF9D",
+		"name": "Green",
+		"backFirst": "168409",
+		"backLast": "64B629"
+	},
+	{
+		"figure": "00FFA3",
+		"name": "Emerald",
+		"backFirst": "219C4C",
+		"backLast": "4DC052"
+	},
+	{
+		"figure": "F1F1F1",
+		"name": "Sky",
+		"backFirst": "85C0FC",
+		"backLast": "71B0F4"
+	},
+	{
+		"figure": "DCDDFF",
+		"name": "Purple blue",
+		"backFirst": "5558F1",
+		"backLast": "7FA5FF"
+	},
+	{
+		"figure": "00F0FF",
+		"name": "Blue",
+		"backFirst": "1285FA",
+		"backLast": "649AEA"
+	},
+	{
+		"figure": "02F0FF",
+		"name": "Navy",
+		"backFirst": "260466",
+		"backLast": "3C52A8"
+	},
+	{
+		"figure": "FD9DFF",
+		"name": "Purple",
+		"backFirst": "9761DB",
+		"backLast": "914DC0"
+	},
+	{
+		"figure": "A4A4A4",
+		"name": "default",
+		"backFirst": "6D6D6D",
+		"backLast": "6B6B6B"
+	},
+	{
+		"figure": "8A8A8A",
+		"name": "Black",
+		"backFirst": "393939",
+		"backLast": "272727"
+	}
+]
