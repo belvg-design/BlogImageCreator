@@ -50,6 +50,7 @@ let  APP = new (class{
         this.validIllustrations = document.querySelector("#validIllustrations");
         this.illustrations = document.querySelector("#illustrations");
         this.tagsSuggestionBar = document.querySelector("#tags-suggestion-bar");
+        this.colorsContainer = document.querySelector("#colors")
         this.randomize = document.querySelector("#randomize");
 
         this.filter.addEventListener("keypress",({code})=>{
@@ -140,6 +141,7 @@ let  APP = new (class{
                 }
 
                 i.setAttribute("crossorigin","anonymous");
+                li.setAttribute("value",record.name);
                 
                 i.onload = (e)=>{
                     this.imagesLoaded[record.name] = Object.assign(record, {image:i, node: li});  
@@ -148,7 +150,7 @@ let  APP = new (class{
                     div.appendChild(i);
                     div.classList.add("loaded");
                     li.addEventListener("click",(e)=>{
-                        let current = document.body.querySelector("ul > li.current")
+                        let current = document.body.querySelector("ul.illustrations > li.current")
                         if(current) current.classList.remove("current");
                         this.current.illustration = this.imagesLoaded[record.name];
                         this.draw();
@@ -178,10 +180,11 @@ let  APP = new (class{
         _next();
     }
     compositeBackBlur(){
-        let colors = document.querySelector("#colors");
+        let colors = this.colorsContainer;
         for(let record of this.backBlur){
             let li = document.createElement("li");
             li.style.setProperty("background", `linear-gradient(90deg, #${record.backFirst}, #${record.backLast})`);
+            li.setAttribute("value", record.name);
             li.addEventListener("click",(e)=>{
                 let current = colors.querySelector(".current");
                 if(current) current.classList.remove("current");
@@ -251,13 +254,24 @@ let  APP = new (class{
                 this.tagsReversed = new Map();
                 Object.entries(this.tags).forEach(([i,v])=>this.tagsReversed.set(v,i));
                 this.randomize.addEventListener("click",(e)=>{
-                    let randomColor = Math.floor(Math.random()*this.backBlur.length);
+                    let randomColor = Math.floor(Math.random()*this.backBlur.length),
+                        currentColorNode = this.colorsContainer.querySelector(".current"),
+                        currentIllustrationNode = document.body.querySelector("ul.illustrations > li.current"),
+                        i;
                     if(this.forRandom.length > 0){
-                        this.current.illustration = this.imagesLoaded[this.forRandom[Math.floor(Math.random()*this.forRandom.length)]];
+                        i = this.imagesLoaded[this.forRandom[Math.floor(Math.random()*this.forRandom.length)]];
                     }else{
-                        this.current.illustration = this.illustration[Math.floor(Math.random()*this.illustration.length)];
+                        i = this.illustration[Math.floor(Math.random()*this.illustration.length)];
                     }
+                    this.current.illustration = i;
                     this.current.color = this.backBlur[randomColor];
+
+                    if(currentColorNode) currentColorNode.classList.remove("current");
+                    console.log(`[value="${this.backBlur[randomColor].name}"]`,this.colorsContainer.querySelector(`[value="${this.backBlur[randomColor].name}"]`));
+                    this.colorsContainer.querySelector(`[value="${this.backBlur[randomColor].name}"]`).classList.add("current");
+
+                    if(currentIllustrationNode) currentIllustrationNode.classList.remove("current");
+                    i.node.classList.add("current");
                     this.renderBack(this.current.color)
                     .then((i)=>{
                         this.current.readyBackBlur = i;
@@ -363,11 +377,9 @@ let  APP = new (class{
                 return false;
             })();
             if(finded){
-                i.node.value = "validIllustrations";
                 this.validIllustrations.appendChild(i.node);
                 this.forRandom.push(i.name);
             } else {
-                i.node.value = "illustrations";
                 this.illustrations.appendChild(i.node);
             }
             
