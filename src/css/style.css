@@ -243,7 +243,7 @@ textarea{
   border-radius: 6px;
 }
 .illustrations > li:hover {
-  box-shadow: 0 0 0 2px #ff336666;
+  border-color: #ff3366;
 }
 .illustrations > li > div{
   position: absolute;
