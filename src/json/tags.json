@@ -1,5 +1,4 @@
 {
-	"_hide" : "_hide",
 	"data analyze" : "Data analyze",
 	"display" : "Display",
 	"workspace" : "Workspace",
@@ -20,7 +19,7 @@
 	"deadline" : "Deadline",
 	"calendar" : "Calendar",
 	"network" : "Network",
-	"wifi" : "wi-Fi",
+	"wifi" : "Wi-Fi",
 	"tech" : "Tech",
 	"blue" : "Blue",
 	"discussion" : "Discussion",

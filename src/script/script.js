@@ -47,10 +47,23 @@ let  APP = new (class{
         this.textarea = document.querySelector("#text");
         this.filter = document.querySelector("#filter");
         this.tagsBar = document.querySelector("#tags-bar");
+        this.validIllustrations = document.querySelector("#validIllustrations");
+        this.illustrations = document.querySelector("#illustrations");
+        this.tagsSuggestionBar = document.querySelector("#tags-suggestion-bar");
         this.randomize = document.querySelector("#randomize");
 
-        this.filter.addEventListener("input",(e)=>{
-            this.setTags(this.filter.value);
+        this.filter.addEventListener("keypress",({code})=>{
+            if(code === "Enter" && this.filter.value.trim().length > 0)
+                this.setTags(this.filter.value);
+        });
+        this.filter.addEventListener("input",({code})=>{
+            this.updateSuggestions(this.filter.value);
+        });
+        this.filter.addEventListener("keydown",({code})=>{
+            if(code === "Backspace" && this.filter.value.length == 0 && this.tagsBar.childElementCount > 1){
+                this.tagsBar.querySelector("button:last-of-type").remove();
+                this.countFilterWidth();
+            }
         });
         document.querySelector("#download").addEventListener("click",(e)=>{
             let link = document.createElement("a");
@@ -62,6 +75,7 @@ let  APP = new (class{
         
         this.loaded = {
             settings : false,
+            tags : false,
             backBlur : false,
             logotype : false,
             illustration : false,
@@ -114,7 +128,7 @@ let  APP = new (class{
         _next();
     }
     compositeIllustrations(){
-        let _current = 0, _counter = 0, _withError = 0, illustrations = document.querySelector("#illustrations"),
+        let _current = 0, _counter = 0, _withError = 0,
             _next = ()=>{
                 let i = document.createElement("img"),
                     li = document.createElement("li"),
@@ -131,13 +145,13 @@ let  APP = new (class{
                 
                 i.onload = (e)=>{
 
-                    this.imagesLoaded[record.name] = Object.assign(record, {image:i});  
+                    this.imagesLoaded[record.name] = Object.assign(record, {image:i, node: li});  
                     i.style.setProperty("left", `${(1 - (this.current.settings.width - record.x)/i.width)*100}%`);
                     i.style.setProperty("top", `${(1 - (this.current.settings.height - record.y)/i.width)*100}%`);
                     div.appendChild(i);
                     div.classList.add("loaded");
                     li.addEventListener("click",()=>{
-                        let current = illustrations.querySelector(".current");
+                        let current = this.illustrations.querySelector(".current");
                         if(current) current.classList.remove("current");
                         this.current.illustration = this.imagesLoaded[record.name];
                         this.draw();
@@ -151,7 +165,7 @@ let  APP = new (class{
                 }
 
                 li.appendChild(div);
-                illustrations.appendChild(li);
+                this.illustrations.appendChild(li);
                 i.src = record.src;
             },
             _onLoad = (err)=>{
@@ -236,6 +250,11 @@ let  APP = new (class{
                 this.draw();
                 this.textarea.addEventListener("input",(e)=>{this.draw()})
                 this.listOfHided = [];
+                this.filterTags = {
+                    tags : new Set()
+                }
+                this.tagsReversed = new Map();
+                Object.entries(this.tags).forEach(([i,v])=>this.tagsReversed.set(v,i));
                 this.illustration.forEach((i)=>this.listOfHided.push(false));
                 this.randomize.addEventListener("click",(e)=>{
                     let listOfRandom = [],
@@ -254,6 +273,8 @@ let  APP = new (class{
                         this.draw();
                     })
                 })
+                this.defineTags();
+                this.updateSuggestions("")
             }
             for(let status of Object.values(this.allLoaded)) if(!status) return;
             console.log("All resources loaded!")
@@ -316,43 +337,87 @@ let  APP = new (class{
         textSize.innerText = phrase;
         return textSize.offsetWidth;
     }
-    setTags(text){
-        let words = text.trim().split(" "),
-            illustrations = document.querySelector("#illustrations");
-        words = words.filter((w)=>this.tags[w]?true:false);
-        this.tagsBar.innerHTML = "";
-        words.forEach((w)=>{
-            let button = document.createElement("button");
-            button.classList.add("active");
-            button.innerText = w;
-            this.tagsBar.appendChild(button);
+    countFilterWidth(){
+        let cs = this.tagsBar.computedStyleMap(),
+            width = this.tagsBar.offsetWidth - cs.get("border-left-width").value*2 - cs.get("padding-left").value - cs.get("padding-right").value -1,
+            diff = 0;
+        this.tagsBar.querySelectorAll("button").forEach((b)=>{
+            let margin = b.computedStyleMap().get("margin-right"),
+                buttonWidth = b.offsetWidth + (margin.value?margin.value:0);
+            if(diff + buttonWidth > width) diff=0;
+            diff += buttonWidth;
         })
-        this.illustration.forEach((i, index)=>{
-            let show = false,
-                li = illustrations.children[index];
-            words.forEach((w)=>{
-                if(i.tags.includes(w)) show = true;
+        let w = width - diff;
+        w = w<200?width:w;
+        this.filter.style.setProperty("width", `${w}px`);
+        console.log(`${width} - ${diff} = ${w}`);
+        this.defineTags();
+    }
+    defineTags(){
+        let buttons = this.tagsBar.querySelectorAll("button:not(.active)"),
+            validSet = new Set();
+        buttons.forEach(b=>validSet.add(this.tagsReversed.get(b.innerText)));
+        console.log(buttons, validSet);
+        this.filterIllustrations(validSet);
+    }
+    filterIllustrations(validSet){
+        if(validSet.size == 0){
+            this.validIllustrations.style.setProperty("display","none");
+        } else {
+            this.validIllustrations.style.setProperty("display","grid");
+            Object.values(this.imagesLoaded).forEach(i=>{
+                let finded = (()=>{
+                    for(let t of i.tags) if(validSet.has(t)) return true;
+                    return false;
+                })();
+                if(finded) 
+                    this.validIllustrations.appendChild(i.node);
+                else
+                    this.illustrations.appendChild(i.node);
             })
-            if(li && show){
-                li.classList.remove("hide");
-                this.listOfHided[index] = false;
-            }
-            else {
-                li.classList.add("hide")
-                this.listOfHided[index] = true;
-            }
-        })
+        }
+    }
+    setTags(text){
+        let button = document.createElement("button"),
+            validTag = this.tags[text.trim().toLowerCase().replace("-","")];
+        //this.filterTags.tags.add(tag);
+        if(!validTag)
+            button.classList.add("active");
+        button.addEventListener("click", (e)=>{
+            e.target.remove();
+            this.countFilterWidth();
+        });
+        button.innerText = validTag || text;
+        this.tagsBar.insertBefore(button, this.filter)
+        this.filter.value = "";
+        this.countFilterWidth();
+
     };
+    updateSuggestions(text){
+        const max = 7;
+        let count = 0;
+        text = text.trim().toLowerCase().replace("-","");
+        this.tagsSuggestionBar.innerHTML = "";
+        if(text.length == 0){
+            this.tagsSuggestionBar.style.setProperty("display", "none");
+            return;
+        };
+        this.tagsSuggestionBar.style.setProperty("display", "flex");
+        for(let k of Object.keys(this.tags)){
+            if(count == max) break;
+            if(k.includes(text)){
+                let b = document.createElement("button");
+                b.innerText = this.tags[k];
+                b.addEventListener("click", e=>{
+                    this.setTags(b.innerText);
+                    this.updateSuggestions("");
+                })
+                this.tagsSuggestionBar.appendChild(b);
+                count++;
+            }
+        }
+        if(count == 0){
+            this.tagsSuggestionBar.style.setProperty("display", "none");
+        }
+    }
 })();
-
-/*
-1108    -   524     =   584(822) - 0.7104 ~ 71.0462 - (1 - (w - x)/i.w) * 100; (i.w - w + x)/i.w
-590     -   16      =   574(831) - 0.690734 ~ 69.0734 - (h - y)/i.h * 100;
-
-1108    -   420     =   688(925) - 0.743783 - 25.6216
-590     -   112     =   478(672) - 0.711309 - 28.8690
-
-    237 + 688 = 100%
-    447 + 478
-
-*/

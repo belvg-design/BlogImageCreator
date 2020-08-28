@@ -83,6 +83,7 @@
                 background: rgb(255, 0, 234);
             }
             #textSize{
+                transform: scale(0);
                 display: initial;
                 visibility: hidden;
                 opacity: 0;
@@ -126,31 +127,6 @@
             </div>
         </div>
         <span id="textSize"></span>
-        <!--div id="content">
-            <div class="container column-container">
-                <div class="main row-container">
-                    
-                    <div class="row-container space-between align-flex-end">
-                        <span class="title">Текст</span>
-                        <span class="clicker" id="showAdditionalParameters">показать доп.настройки</span>
-                    </div>
-                    <textarea id="text" class="textarea margin-top-low"></textarea>
-                    <span class="option margin-top-high">Задний фон</span>
-                    <ul id="colors" class="palette grid margin-top-low">
-                    </ul>
-                    <canvas id="canvas" width="1108" height="590" class="canvas"></canvas>
-                    <div class="row-container flex-start margin-top-low align-center">
-                        <button id="download">Скачать PNG</button>
-                        <span class="clicker" id="otherFormats">Другой формат...</span>
-                    </div>
-                </div>
-                <div class="side-menu column-container">
-                    <span class="title  margin-top-high">Иллюстрации</span>
-                    <ul id="illustrations" class="illustrations grid margin-top-middle">
-                    </ul>
-                </div>
-            </div>
-        </div-->
         <div class="content-container column-container space-between">
             <div id="content" class="column-container">
                 <div class="main-panel row-container space-between">
@@ -183,8 +159,13 @@
                 <div class="options-panel"></div>
                 <div class="illustrations-panel margin-top-middle">
                     <span class="label">Select Illusration</span>
-                    <input type="text" class="tags text-input margin-top-low" id="filter" placeholder="Find Image by Tag">
-                    <div class="tags-bar row-container margin-top-low" id="tags-bar"></div>
+                    
+                    <div class="filter-container row-container tags-bar" id="tags-bar">
+                        <input type="text" class="tags text-input margin-top-low" id="filter" placeholder="Find Image by Tag">
+                    </div>
+                    <div class="tags-suggestion-bar row-container" id="tags-suggestion-bar"></div>
+                    <ul id="validIllustrations" class="illustrations grid margin-top-middle">
+                    </ul>
                     <ul id="illustrations" class="illustrations grid margin-top-middle">
                     </ul>
                 </div>
