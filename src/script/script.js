@@ -139,24 +139,21 @@ let  APP = new (class{
                     return;
                 }
 
-                li.value = _current;
-
                 i.setAttribute("crossorigin","anonymous");
                 
                 i.onload = (e)=>{
-
                     this.imagesLoaded[record.name] = Object.assign(record, {image:i, node: li});  
                     i.style.setProperty("left", `${(1 - (this.current.settings.width - record.x)/i.width)*100}%`);
                     i.style.setProperty("top", `${(1 - (this.current.settings.height - record.y)/i.width)*100}%`);
                     div.appendChild(i);
                     div.classList.add("loaded");
-                    li.addEventListener("click",()=>{
-                        let current = this.illustrations.querySelector(".current");
+                    li.addEventListener("click",(e)=>{
+                        let current = document.body.querySelector("ul > li.current")
                         if(current) current.classList.remove("current");
                         this.current.illustration = this.imagesLoaded[record.name];
                         this.draw();
                         li.classList.add("current")
-                    })
+                    }, true);
                     _onLoad();
                 }
                 i.onerror = (e)=>{
@@ -250,9 +247,7 @@ let  APP = new (class{
                 this.draw();
                 this.textarea.addEventListener("input",(e)=>{this.draw()})
                 this.forRandom = [];
-                this.filterTags = {
-                    tags : new Set()
-                }
+                this.validSet = new Set();
                 this.tagsReversed = new Map();
                 Object.entries(this.tags).forEach(([i,v])=>this.tagsReversed.set(v,i));
                 this.randomize.addEventListener("click",(e)=>{
@@ -269,11 +264,11 @@ let  APP = new (class{
                         this.draw();
                     })
                 })
-                this.defineTags();
-                this.updateSuggestions("")
             }
             for(let status of Object.values(this.allLoaded)) if(!status) return;
             console.log("All resources loaded!")
+            this.defineTags();
+            this.updateSuggestions("")
         })()
     }
     error(err){
@@ -352,34 +347,40 @@ let  APP = new (class{
         let buttons = this.tagsBar.querySelectorAll("button:not(.active)"),
             validSet = new Set();
         buttons.forEach(b=>validSet.add(this.tagsReversed.get(b.innerText)));
+        this.validSet = validSet;
         this.filterIllustrations(validSet);
     }
     filterIllustrations(validSet){
         this.forRandom = [];
-        if(validSet.size == 0){
+        if(validSet.size == 0)
             this.validIllustrations.style.setProperty("display","none");
-        } else {
+        else 
             this.validIllustrations.style.setProperty("display","grid");
-            Object.values(this.imagesLoaded).forEach(i=>{
-                let finded = (()=>{
-                    for(let t of i.tags) if(validSet.has(t)) return true;
-                    return false;
-                })();
-                if(finded){
-                    this.validIllustrations.appendChild(i.node);
-                    this.forRandom.push(i.name);
-                } else {
-                    this.illustrations.appendChild(i.node);
-                }
-            })
-        }
+    
+        this.illustration.forEach(i=>{
+            let finded = (()=>{
+                for(let t of i.tags) if(validSet.has(t)) return true;
+                return false;
+            })();
+            if(finded){
+                i.node.value = "validIllustrations";
+                this.validIllustrations.appendChild(i.node);
+                this.forRandom.push(i.name);
+            } else {
+                i.node.value = "illustrations";
+                this.illustrations.appendChild(i.node);
+            }
+            
+        })
     }
     setTags(text){
         let button = document.createElement("button"),
-            validTag = this.tags[text.trim().toLowerCase().replace("-","")];
-        //this.filterTags.tags.add(tag);
-        if(!validTag)
-            button.classList.add("active");
+            validName = text.trim().toLowerCase().replace("-",""),
+            validTag = this.tags[validName],
+            elreadyExist = this.validSet.has(validName);
+        if(!validTag || elreadyExist)
+            return;
+        
         button.addEventListener("click", (e)=>{
             e.target.remove();
             this.countFilterWidth();
@@ -387,7 +388,9 @@ let  APP = new (class{
         button.innerText = validTag || text;
         this.tagsBar.insertBefore(button, this.filter)
         this.filter.value = "";
+        this.filter.focus();
         this.countFilterWidth();
+        this.updateSuggestions("");
 
     };
     updateSuggestions(text){
@@ -402,12 +405,11 @@ let  APP = new (class{
         this.tagsSuggestionBar.style.setProperty("display", "flex");
         for(let k of Object.keys(this.tags)){
             if(count == max) break;
-            if(k.includes(text)){
+            if(k.includes(text) && !this.validSet.has(k)){
                 let b = document.createElement("button");
                 b.innerText = this.tags[k];
                 b.addEventListener("click", e=>{
                     this.setTags(b.innerText);
-                    this.updateSuggestions("");
                 })
                 this.tagsSuggestionBar.appendChild(b);
                 count++;

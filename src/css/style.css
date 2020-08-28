@@ -218,8 +218,7 @@ textarea{
   grid-gap: 25px;
 }
 #validIllustrations{
-  padding-bottom: 20px;
-  border-bottom: 2px solid #eee;
+  padding: 25px;
 }
 .illustrations > li{
   width: 100%;
@@ -259,7 +258,7 @@ textarea{
   background: white;
 }
 .illustrations > li > div > img{
-  position: absolute;
+  position: relative;
   width:   100%;
 }
 .illustrations > li.hide{
@@ -295,10 +294,15 @@ textarea{
   align-items: center;
 }
 .tags-suggestion-bar{
-  align-items: center;
-  padding: 10px 15px;
   background: #f9f9f9;
   border-radius: 0px 0px 10px 10px;
+}
+#tags-suggestion-bar{
+  align-items: center;
+  padding: 18px 25px;
+}
+#tags-suggestion-bar:not([style*="none"]) ~ #validIllustrations{
+  padding-top: 0;
 }
 .tags-bar > button{
   overflow: hidden;
@@ -317,7 +321,7 @@ textarea{
   margin-left: 0px;
   margin-right: 10px;
 }
-.tags-suggestion-bar > button{
+#tags-suggestion-bar > button{
   overflow: hidden;
   box-sizing: border-box;
   width: auto;
