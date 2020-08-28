@@ -122,6 +122,10 @@ body{
   border-radius: 6px;
   box-sizing: border-box;
 }
+.palette > li:hover {
+  box-shadow: 0 0 0 2px #ff3366;
+  border: 1px solid #fff;
+}
 .palette > li ~ li{
   margin-top: 10px;
 }
@@ -237,6 +241,9 @@ textarea{
   background: white;
   border: 1px solid #CCCCCC;
   border-radius: 6px;
+}
+.illustrations > li:hover {
+  box-shadow: 0 0 0 2px #ff336666;
 }
 .illustrations > li > div{
   position: absolute;
