@@ -153,6 +153,16 @@ button{
   cursor: pointer;
   white-space: nowrap;
 }
+button#randomize::before {
+  display: inline-block;
+  content: "";
+  width: 15px;
+  height: 17px;
+  background: url(../img/random-icon.svg);
+  margin-right: 10px;
+  top: 2;
+  position: relative;
+}
 button.transparent{
   background: none;
   border: 1px solid #FF3366;
