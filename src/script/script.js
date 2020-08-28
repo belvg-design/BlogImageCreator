@@ -249,24 +249,20 @@ let  APP = new (class{
                 this.closePreloader();
                 this.draw();
                 this.textarea.addEventListener("input",(e)=>{this.draw()})
-                this.listOfHided = [];
+                this.forRandom = [];
                 this.filterTags = {
                     tags : new Set()
                 }
                 this.tagsReversed = new Map();
                 Object.entries(this.tags).forEach(([i,v])=>this.tagsReversed.set(v,i));
-                this.illustration.forEach((i)=>this.listOfHided.push(false));
                 this.randomize.addEventListener("click",(e)=>{
-                    let listOfRandom = [],
-                        randomId,
-                        randomColor = Math.floor(Math.random()*this.backBlur.length);
-                    this.listOfHided.forEach((l, index)=>{
-                        if(!l) listOfRandom.push(index); 
-                    });
-                    randomId = listOfRandom[Math.floor(Math.random()*listOfRandom.length)];
-                    this.current.illustration = this.illustration[randomId];
+                    let randomColor = Math.floor(Math.random()*this.backBlur.length);
+                    if(this.forRandom.length > 0){
+                        this.current.illustration = this.imagesLoaded[this.forRandom[Math.floor(Math.random()*this.forRandom.length)]];
+                    }else{
+                        this.current.illustration = this.illustration[Math.floor(Math.random()*this.illustration.length)];
+                    }
                     this.current.color = this.backBlur[randomColor];
-                    console.log(randomId, randomColor)
                     this.renderBack(this.current.color)
                     .then((i)=>{
                         this.current.readyBackBlur = i;
@@ -350,14 +346,12 @@ let  APP = new (class{
         let w = width - diff;
         w = w<200?width:w;
         this.filter.style.setProperty("width", `${w}px`);
-        console.log(`${width} - ${diff} = ${w}`);
         this.defineTags();
     }
     defineTags(){
         let buttons = this.tagsBar.querySelectorAll("button:not(.active)"),
             validSet = new Set();
         buttons.forEach(b=>validSet.add(this.tagsReversed.get(b.innerText)));
-        console.log(buttons, validSet);
         this.filterIllustrations(validSet);
     }
     filterIllustrations(validSet){
@@ -365,15 +359,18 @@ let  APP = new (class{
             this.validIllustrations.style.setProperty("display","none");
         } else {
             this.validIllustrations.style.setProperty("display","grid");
+            this.forRandom = [];
             Object.values(this.imagesLoaded).forEach(i=>{
                 let finded = (()=>{
                     for(let t of i.tags) if(validSet.has(t)) return true;
                     return false;
                 })();
-                if(finded) 
+                if(finded){
                     this.validIllustrations.appendChild(i.node);
-                else
+                    this.forRandom.push(i.name);
+                } else {
                     this.illustrations.appendChild(i.node);
+                }
             })
         }
     }
