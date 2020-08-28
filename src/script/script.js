@@ -355,11 +355,11 @@ let  APP = new (class{
         this.filterIllustrations(validSet);
     }
     filterIllustrations(validSet){
+        this.forRandom = [];
         if(validSet.size == 0){
             this.validIllustrations.style.setProperty("display","none");
         } else {
             this.validIllustrations.style.setProperty("display","grid");
-            this.forRandom = [];
             Object.values(this.imagesLoaded).forEach(i=>{
                 let finded = (()=>{
                     for(let t of i.tags) if(validSet.has(t)) return true;
