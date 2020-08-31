@@ -3,12 +3,12 @@
 		"x": 524,
 		"name": "img_1",
 		"src": "./src/img/img_1.png",
-		"descr": "Data analyze image",
+		"descr": "Data Analyze image",
 		"tags": [
-			"data analyze",
-			"display",
-			"workspace",
-			"violet"
+			"Data Analyze",
+			"Display",
+			"Workspace",
+			"Violet"
 		],
 		"y": 16,
 		"backBlur": "Navy"
@@ -19,11 +19,11 @@
 		"src": "./src/img/img_3.png",
 		"descr": "Mobile interface",
 		"tags": [
-			"mobile",
-			"interface",
-			"ux",
-			"authorization",
-			"violet"
+			"Mobile",
+			"Interface",
+			"UX",
+			"Authorization",
+			"Violet"
 		],
 		"y": 112
 	},
@@ -33,10 +33,10 @@
 		"src": "./src/img/img_2.png",
 		"descr": "E-commerce",
 		"tags": [
-			"ecommerce",
-			"cash",
-			"display",
-			"cart"
+			"e-Commerce",
+			"Cash",
+			"Display",
+			"Cart"
 		],
 		"y": 31
 	},
@@ -46,11 +46,11 @@
 		"src": "./src/img/img_4.png",
 		"descr": "E-commerce",
 		"tags": [
-			"ecommerce",
-			"cash",
-			"ux",
-			"customer",
-			"pay"
+			"e-Commerce",
+			"Cash",
+			"UX",
+			"Customer",
+			"Pay"
 		],
 		"y": -20
 	},
@@ -60,10 +60,10 @@
 		"src": "./src/img/img_5.png",
 		"descr": "-",
 		"tags": [
-			"shopify",
-			"display",
-			"ecommerce",
-			"green"
+			"Shopify",
+			"Display",
+			"e-Commerce",
+			"Green"
 		],
 		"y": 23
 	},
@@ -73,10 +73,10 @@
 		"src": "./src/img/img_6.png",
 		"descr": "-",
 		"tags": [
-			"community",
-			"team",
-			"deadline",
-			"calendar"
+			"Community",
+			"Team",
+			"Deadline",
+			"Calendar"
 		],
 		"y": -82
 	},
@@ -86,12 +86,12 @@
 		"src": "./src/img/img_7.png",
 		"descr": "-",
 		"tags": [
-			"network",
-			"wifi",
-			"tech",
-			"violet",
-			"blue",
-			"discussion"
+			"Network",
+			"Wi-Fi",
+			"Tech",
+			"Violet",
+			"Blue",
+			"Discussion"
 		],
 		"y": 60
 	},
@@ -101,13 +101,13 @@
 		"src": "./src/img/img_8.png",
 		"descr": "-",
 		"tags": [
-			"team",
-			"discussion",
-			"diagrams",
-			"infographics",
-			"analyze",
-			"marketing",
-			"brainstorm"
+			"Team",
+			"Discussion",
+			"Diagrams",
+			"Infographics",
+			"Analyze",
+			"Marketing",
+			"Brainstorm"
 		],
 		"y": 60
 	},
@@ -117,11 +117,11 @@
 		"src": "./src/img/img_9.png",
 		"descr": "-",
 		"tags": [
-			"team",
-			"discussion",
-			"brainstorm",
-			"marketing",
-			"violet"
+			"Team",
+			"Discussion",
+			"Brainstorm",
+			"Marketing",
+			"Violet"
 		],
 		"y": 20
 	},
@@ -131,9 +131,9 @@
 		"src": "./src/img/img_10.png",
 		"descr": "-",
 		"tags": [
-			"customer",
-			"gift",
-			"pay"
+			"Customer",
+			"Gift",
+			"Pay"
 		],
 		"y": 100
 	},
@@ -143,10 +143,10 @@
 		"src": "./src/img/img_11.png",
 		"descr": "-",
 		"tags": [
-			"shopify",
-			"programming",
-			"workspace",
-			"tech"
+			"Shopify",
+			"Programming",
+			"Workspace",
+			"Tech"
 		],
 		"y": 0
 	},
@@ -156,11 +156,11 @@
 		"src": "./src/img/img_12.png",
 		"descr": "-",
 		"tags": [
-			"display",
-			"ecommerce",
-			"cart",
-			"feedback",
-			"sale"
+			"Display",
+			"e-Commerce",
+			"Cart",
+			"Feedback",
+			"Sale"
 		],
 		"y": 0
 	},
@@ -170,9 +170,9 @@
 		"src": "./src/img/img_13.png",
 		"descr": "-",
 		"tags": [
-			"mobile",
-			"pay",
-			"ecommerce"
+			"Mobile",
+			"Pay",
+			"e-Commerce"
 		],
 		"y": 20
 	},
@@ -182,10 +182,10 @@
 		"src": "./src/img/img_14.png",
 		"descr": "-",
 		"tags": [
-			"sale",
-			"mobile",
-			"feedback",
-			"ecommerce"
+			"Sale",
+			"Mobile",
+			"Feedback",
+			"e-Commerce"
 		],
 		"y": 20
 	},
@@ -195,11 +195,11 @@
 		"src": "./src/img/img_15.png",
 		"descr": "-",
 		"tags": [
-			"mobile",
-			"ux",
-			"ecommerce",
-			"violet",
-			"pay"
+			"Mobile",
+			"UX",
+			"e-Commerce",
+			"Violet",
+			"Pay"
 		],
 		"y": 20
 	},
@@ -209,9 +209,9 @@
 		"src": "./src/img/img_16.png",
 		"descr": "-",
 		"tags": [
-			"team",
-			"deadline",
-			"calendar"
+			"Team",
+			"Deadline",
+			"Calendar"
 		],
 		"y": 20
 	},
@@ -221,10 +221,10 @@
 		"src": "./src/img/img_17.png",
 		"descr": "-",
 		"tags": [
-			"programming",
-			"workspace",
-			"tech",
-			"blue"
+			"Programming",
+			"Workspace",
+			"Tech",
+			"Blue"
 		],
 		"y": 40
 	},
@@ -234,12 +234,12 @@
 		"src": "./src/img/img_18.png",
 		"descr": "-",
 		"tags": [
-			"medicine",
-			"ecommerce",
-			"customer",
-			"pay",
-			"navy",
-			"ux"
+			"Medicine",
+			"e-Commerce",
+			"Customer",
+			"Pay",
+			"Navy",
+			"UX"
 		],
 		"y": 60
 	},
@@ -249,9 +249,9 @@
 		"src": "./src/img/img_19.png",
 		"descr": "-",
 		"tags": [
-			"review",
-			"feedback",
-			"star"
+			"Review",
+			"Feedback",
+			"Star"
 		],
 		"y": 50
 	},
@@ -261,10 +261,10 @@
 		"src": "./src/img/img_20.png",
 		"descr": "-",
 		"tags": [
-			"marketing",
-			"analyze",
-			"display",
-			"violet"
+			"Marketing",
+			"Analyze",
+			"Display",
+			"Violet"
 		],
 		"y": 50
 	}

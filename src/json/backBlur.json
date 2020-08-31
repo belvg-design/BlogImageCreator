@@ -54,15 +54,15 @@
 		"backLast": "914DC0"
 	},
 	{
-		"figure": "A4A4A4",
-		"name": "default",
-		"backFirst": "6D6D6D",
-		"backLast": "6B6B6B"
-	},
-	{
 		"figure": "8A8A8A",
 		"name": "Black",
 		"backFirst": "393939",
 		"backLast": "272727"
+	},
+	{
+		"figure": "A4A4A4",
+		"name": "default",
+		"backFirst": "6D6D6D",
+		"backLast": "6B6B6B"
 	}
 ]
