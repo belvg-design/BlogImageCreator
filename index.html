@@ -1,6 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <script defer src="./src/script/jszip.js"></script>
         <script defer src="./src/script/script.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <style>
@@ -82,14 +83,19 @@
             .preloader-rotater:nth-child(6) > div{
                 background: rgb(255, 0, 234);
             }
-            #textSize{
+            #textSize, #textWidth{
                 transform: scale(0);
-                display: initial;
                 visibility: hidden;
-                opacity: 0;
+                display: initial;
+                opacity: 0.5;
                 position: absolute;
                 top: 0;
                 left: 0;
+                z-index: 99;
+                font-family: Kanit, sans-serif;
+                font-size: 68px;
+                line-height: 71px;
+                font-weight: bold;
             }
             @keyframes pulse{
                 from {opacity: 0.6;}
@@ -127,6 +133,7 @@
             </div>
         </div>
         <span id="textSize"></span>
+        <span id="textWidth"></span>
         <div class="content-container column-container space-between">
             <div id="content" class="column-container">
                 <div class="main-panel row-container space-between">
@@ -139,7 +146,7 @@
                                 <button id="download">Download PNG</button>
                                 <button id="randomize" class="transparent">Random image</button>
                             </div>
-                            <div class="icon">
+                            <div class="icon" id="openOptions">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                     <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
                                     <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
@@ -156,7 +163,120 @@
                         <ul id="colors" class="palette margin-top-low column-container"></ul>
                     </div>
                 </div>
-                <div class="options-panel"></div>
+                <div class="options-panel column-container margin-top-middle hide" id="optionsPanel">
+                    <div class="row-container space-between">
+                        <span class="title">Settings</span>
+                        <a class="operation" onclick="APP.toggleOptions()">Close settings</a>
+                    </div>
+                    <span class="subtitle margin-top-middle">Text</span>
+                    <div class="options column-container">
+                        <div class="row-container">
+                            <div class="checkbox-container row-container">
+                                <span>Auto resize text</span><input id="autoResizeText" type="checkbox" oninput="APP.options.toggleAutoResize(this)">
+                            </div>
+                            <div class="checkbox-container row-container">
+                                <span>Show text borders</span><input id="showTextBox" type="checkbox" oninput="APP.options.toggleShowBorders(this)">
+                            </div>
+                            <div class="input-field full-width row-container">
+                                <span>Highlighted lines(comma separated line numbers)</span><input id="highlightedLines" type="text">
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <div class="colors-input-container row-container">
+                                <span>Highlighted text color</span><input id="highlightedTextColor" type="text" oninput="APP.options.changeTextColor(this)"><span id="colorbox_highlightedTextColor" class="color-icon"></span>
+                            </div>
+                            <div class="colors-input-container row-container">
+                                <span>Highlight color</span><input type="text" id="highlightColor" oninput="APP.options.changeFieldColor(this)"><span id="colorbox_highlightColor" class="color-icon"></span>
+                            </div>
+                            <div class="colors-input-container row-container">
+                                <span>Text color</span><input type="text" id="textColor" oninput="APP.options.changeTitleTextColor(this)"><span id="colorbox_textColor" class="color-icon"></span>
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <div class="input-field  row-container">
+                                <span>Font size</span><input id="fontSize" type="number" oninput="APP.options.changeFontSize(this)">
+                            </div>
+                            <div class="input-field  row-container">
+                                <span>Line height</span><input id="lineHeight" type="number" oninput="APP.options.changeLineHeight(this)">
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <div class="input-field  row-container">
+                                <span>Text left</span><input id="textLeft" type="number" oninput="APP.options.changeTextPos(this)">
+                            </div>
+                            <div class="input-field row-container">
+                                <span>Text top</span><input id="textTop" type="number" oninput="APP.options.changeTextPos(this, true)">
+                            </div>
+                        </div>
+                        <div class="row-container">
+                            <div class="input-field row-container">
+                                <span>Text border-box width</span><input id="textBoxWidth" type="number" oninput="APP.options.changeTextBox(this)">
+                            </div>
+                            <div class="input-field row-container">
+                                <span>Text border-box height</span><input id="textBoxHeight" type="number" oninput="APP.options.changeTextBox(this, true)">
+                            </div>
+                        </div>
+                    </div>
+                    <span class="subtitle margin-top-middle">Common</span>
+                    <div class="options row-container">
+                        <div class="input-field row-container">
+                            <span>Illustration width</span><input id="width" type="number" oninput="APP.options.changeIllustrationBox(this)">
+                        </div>
+                        <div class="input-field row-container">
+                            <span>Illustration height</span><input id="height" type="number" oninput="APP.options.changeIllustrationBox(this, true)">
+                        </div>
+                    </div>
+                    <span class="subtitle margin-top-middle">Illustration</span>
+                    <div class="options column-container">
+                        <div class="row-container">
+                            <div class="input-field half-width row-container">
+                                <span>Name</span><input id="illustrationName" type="text" oninput="APP.options.changeIllustration('name',this.value)">
+                            </div>
+                            <div class="input-field half-width row-container">
+                                <span>Description</span><input id="illustrationDescr" type="text" oninput="APP.options.changeIllustration('descr',this.value)">
+                            </div>
+                            <div class="input-field half-width row-container">
+                                <span>Source</span><input id="illustrationSrc" type="text" oninput="APP.options.changeIllustration('src',this.value)">
+                            </div>  
+                        </div>
+                        <div class="row-container">
+                            <div class="input-field row-container">
+                                <span>X</span><input id="illustrationX" type="number" oninput="APP.options.changeIllustration('x',this.value)">
+                            </div>
+                            <div class="input-field row-container">
+                                <span>Y</span><input id="illustrationY" type="number" oninput="APP.options.changeIllustration('y',this.value)">
+                            </div>
+                            <div class="input-field half-width full-width row-container">
+                                <span>Tags</span><input id="illustrationTags" type="text">
+                            </div>
+                        </div>
+                        <a class="operation"onclick="APP.addIllustration()">Add new Image</a>
+                    </div>
+                    <span class="subtitle margin-top-middle">Color</span>
+                    <div class="options column-container">
+                        <div class="row-container">
+                            <div class="colors-input-container row-container">
+                                <span>Figure color</span><input id="backBlurFigure" type="text" alt="figure"><span id="colorbox_backBlurFigure" class="color-icon"></span>
+                            </div>
+                            <div class="colors-input-container row-container">
+                                <span>Background top color</span><input id="backBlurFirst" type="text" alt="backFirst"><span id="colorbox_backBlurFirst" class="color-icon"></span>
+                            </div>
+                            <div class="colors-input-container row-container">
+                                <span>Background bottom color</span><input id="backBlurLast" type="text"  alt="backLast"><span id="colorbox_backBlurLast" class="color-icon"></span>
+                            </div>
+                        </div>
+                        <div class="input-field half-width row-container">
+                            <span>Name</span><input id="backBlurName" type="text" oninput="APP.options.changeColor('name',this.value)">
+                        </div>  
+                        <a class="operation"onclick="APP.addColor()">Add new Color</a>
+                    </div>
+                    <div class="row-container space-between margin-top-high">
+                        <a class="operation">Download settings.json</a>
+                        <a class="operation">Download illustrations.json</a>
+                        <a class="operation">Download backBlur.json</a>
+                        <a class="operation" onclick="APP.getAllFiles()">Download all files</a>
+                    </div>
+                </div>
                 <div class="illustrations-panel margin-top-middle">
                     <span class="label">Select Illusration</span>
                     
