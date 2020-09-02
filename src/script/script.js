@@ -147,6 +147,7 @@ let  APP = new (class{
         this.nodes.colorsContainer = document.querySelector("#colors")
         this.nodes.randomize = document.querySelector("#randomize");
         this.nodes.optionsPanel = document.querySelector(".settings");
+        this.nodes.preloaderText = document.querySelector("#preloader_text");
         
         this.context = canvas.getContext("2d",{alpha:false});
 
@@ -198,6 +199,7 @@ let  APP = new (class{
         
         oninput="APP.options.changeColor('backLast',this.value, this.id)"
         
+        this.loadingI = 0;
         this.loaded = {
             settings : false,
             backBlur : false,
@@ -291,7 +293,7 @@ let  APP = new (class{
                 app.updateBox();
             },
             changeIllustration(type, value){
-                let app = this.this;
+                let app = this.this, number = 0;
                 switch(type){
                     case "name":
                         app.current.illustration[type] = value;
@@ -306,7 +308,7 @@ let  APP = new (class{
                         app.draw();
                         break;
                     case "x":
-                        let number = parseInt(value || "0");
+                        number = parseInt(value || "0");
                         app.current.illustration[type] = isNaN(number)?app.current.illustration[type]:number;
                         app.draw();
                         break;
@@ -336,6 +338,7 @@ let  APP = new (class{
             }
         };
         this.allLoadedMain = false;
+        this.setLoading(0);
 
         ["settings", "logotype","illustration", "backBlur"].forEach((obj)=>{
             this.loadJSON(`./src/json/${obj}.json`, obj);
@@ -344,6 +347,7 @@ let  APP = new (class{
         .then((lf)=>{
             document.fonts.add(lf);
             this.loadDone("Font 'Kanit' loaded!", "font")
+            this.setLoading(5);
         })
     }
     logotypeLoad(){
@@ -373,7 +377,7 @@ let  APP = new (class{
         _next();
     }
     compositeIllustrations(){
-        let _current = 0, _counter = 0, _withError = 0,
+        let _current = 0, _counter = 0, _withError = 0, pr = 1/this.illustration.length*64,
             _next = ()=>{
                 let i = document.createElement("img"),
                     li = document.createElement("li"),
@@ -418,9 +422,12 @@ let  APP = new (class{
                 _current++;
                 if(_current < this.illustration.length){
                     _next();
+                    this.setLoading(pr);
                 } else{
                     console.log(`Load ${_counter}${_withError?`(${_withError})`:""}`);
                     this.allDone("compositeIllustrations");
+                    this.setLoading(100 - this.loadingI);
+                    this.closePreloader();
                 }
             };
         _next();
@@ -429,7 +436,12 @@ let  APP = new (class{
         for(let record of this.backBlur){
             this.addColor(record)
         }
+        this.setLoading(5);
         this.allDone("compositeBackBlur");
+    }
+    setLoading(i=this.loadingI){
+        this.loadingI += i;
+        this.nodes.preloaderText.innerText = `Loading ${Math.ceil(this.loadingI)}%`;
     }
     addColor(record={figure: "A4A4A4", name: "color_"+this.backBlur.length, backFirst: "6D6D6D", backLast: "6B6B6B"}, colors=this.nodes.colorsContainer){
         let li = document.createElement("li");
@@ -464,7 +476,8 @@ let  APP = new (class{
         .then(r=>r.json())
         .then(j=>{
             this[name] = format(j);
-            this.loadDone(`End fetching: "${url}"`, name)
+            this.loadDone(`End fetching: "${url}"`, name);
+            this.setLoading(3);
         });
     }
     loadDone(message, target){
@@ -472,6 +485,7 @@ let  APP = new (class{
         console.log(message);
         (()=>{
             for(let status of Object.values(this.loaded)) if(!status) return;
+            this.setLoading(8);
             console.log("Settings loaded!");
             this.current = {
                 settings : this.settings[0],
@@ -489,6 +503,7 @@ let  APP = new (class{
             this.renderBack(this.current.color).then((i)=>{
                 this.current.readyBackBlur = i;
                 this.allDone("readyBackBlur");
+                this.setLoading(5);
             })
             this.allDone("settings");
             this.compositeIllustrations();
@@ -504,7 +519,6 @@ let  APP = new (class{
             if(!this.allLoadedMain && (this.allLoaded.settings && this.allLoaded.readyBackBlur)){
                 console.log("Main resources loaded. Ready to work!");
                 this.allLoadedMain = true;
-                this.closePreloader();
                 this.textCanvas = new TEXTCANVAS(this.context, this.current.settings, this.current.settings.text);
                 this.draw();
                 this.draw();
@@ -550,8 +564,8 @@ let  APP = new (class{
     closePreloader(){
         setTimeout(()=>{
             document.querySelector("#preloader").style.setProperty("display","none");
-            document.querySelector("#content").style.setProperty("display","flex");
-        }, 1000);
+            document.body.classList.remove("loading")
+        }, 500);
     }
     toggleOptions(){
         if(this.current.settings.settings && !this.nodes.optionsPanel.classList.toggle("hide"))
@@ -878,11 +892,11 @@ let  APP = new (class{
         inputs.illustrationY.value = this.current.illustration.y;
         inputs.illustrationTags.value = this.current.illustration.tags.join(", ");
         inputs.backBlurFigure.value = this.current.color.figure;
-        inputs.backBlurFigure.nextElementSibling.value = "#" + this.current.color.figure;
         inputs.backBlurFirst.value = this.current.color.backFirst;
-        inputs.backBlurFirst.nextElementSibling.value = "#" + this.current.color.backFirst;
         inputs.backBlurLast.value = this.current.color.backLast;
-        inputs.backBlurLast.nextElementSibling.value = "#" + this.current.color.backLast;
+        inputs.backBlurFigure.nextElementSibling.value = "#" + this.current.color.figure;  
+        inputs.backBlurFirst.nextElementSibling.value = "#" + this.current.color.backFirst;  
+        inputs.backBlurLast.nextElementSibling.value = "#" + this.current.color.backLast;    
         inputs.backBlurName.value = this.current.color.name;
     }
 })();

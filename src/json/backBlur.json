@@ -12,12 +12,6 @@
 		"backLast": "fff70a"
 	},
 	{
-		"figure": "ffffff",
-		"name": "Yellow",
-		"backFirst": "ffe66b",
-		"backLast": "ffe66b"
-	},
-	{
 		"figure": "00ffa2",
 		"name": "Light green",
 		"backFirst": "78b677",
@@ -88,11 +82,5 @@
 		"name": "Black",
 		"backFirst": "1f1f1f",
 		"backLast": "4d4d4d"
-	},
-	{
-		"figure": "A4A4A4",
-		"name": "Gray",
-		"backFirst": "6D6D6D",
-		"backLast": "6B6B6B"
 	}
 ]
