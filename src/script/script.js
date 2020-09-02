@@ -188,9 +188,8 @@ let  APP = new (class{
             "backBlurFirst",
             "backBlurLast"]
         .forEach(id=>{
-            document.querySelector("#"+id).addEventListener("keypress",(e)=>{
-                if(e.code === "Enter")
-                    this.options.changeColor(e.target.alt,e.target.value, e.target.id);
+            document.querySelector("#"+id).addEventListener("input",(e)=>{
+                this.options.changeColor(e.target.alt,e.detail.value,e.target.nextElementSibling);
             })
         })
         document.querySelector("#openOptions").addEventListener("click",(e)=>{
@@ -235,19 +234,13 @@ let  APP = new (class{
                 app.current.settings.highlightedLines = lines;
                 app.draw();
             },
-            changeTextColor(e){
+            changeSettings(field, value, isNumber=false){
                 let app = this.this;
-                app.current.settings.textColor = e.value;
-                app.draw();
-            },
-            changeTitleTextColor(e){
-                let app = this.this;
-                app.current.settings.titleColor = e.value;
-                app.draw();
-            },
-            changeFieldColor(e){
-                let app = this.this;
-                app.current.settings.fieldColor = e.value;
+                if(isNumber){
+                    let number = parseFloat(value || "0");
+                    value = isNaN(number)?app.current.settings.fontSize:number;
+                }
+                app.current.settings[field] = value;
                 app.draw();
             },
             changeFontSize(e){
@@ -313,12 +306,12 @@ let  APP = new (class{
                         app.draw();
                         break;
                     case "x":
-                        let number = parseInt(e.value || "0");
+                        let number = parseInt(value || "0");
                         app.current.illustration[type] = isNaN(number)?app.current.illustration[type]:number;
                         app.draw();
                         break;
                     case "y":
-                        number = parseInt(e.value || "0");
+                        number = parseInt(value || "0");
                         app.current.illustration[type] = isNaN(number)?app.current.illustration[type]:number;
                         app.draw();
                         break;
@@ -330,12 +323,10 @@ let  APP = new (class{
                         break;
                 }
             },
-            changeColor(type, value, id=""){
-                let app = this.this,
-                    icon = document.querySelector("#colorbox_"+ id);
-                app.current.color[type] = value;
-                if(icon) icon.style.setProperty("background", value)
-                console.log(type, value, app.current.color);
+            changeColor(type, value, node){
+                let app = this.this;
+                app.current.color[type] = value.replace("#","");
+                node.setAttribute("value", value)
                 app.renderBack(app.current.color)
                 .then((i)=>{
                     app.current.readyBackBlur = i;
@@ -841,9 +832,6 @@ let  APP = new (class{
         "highlightedTextColor",
         "highlightColor",
         "textColor",
-        "colorbox_highlightedTextColor",
-        "colorbox_highlightColor",
-        "colorbox_textColor",
         "fontSize",
         "lineHeight",
         "textLeft",
@@ -869,11 +857,11 @@ let  APP = new (class{
         inputs.showTextBox.checked = this.current.settings.showTextBox;
         inputs.highlightedLines.value = this.current.settings.highlightedLines.join(", ");
         inputs.highlightedTextColor.value = this.current.settings.textColor;
-        inputs.colorbox_highlightedTextColor.style.setProperty("background",this.current.settings.textColor);
+        inputs.highlightedTextColor.previousElementSibling.setAttribute("value", this.current.settings.textColor);
         inputs.highlightColor.value = this.current.settings.fieldColor;
-        inputs.colorbox_highlightColor.style.setProperty("background",this.current.settings.fieldColor);
+        inputs.highlightColor.previousElementSibling.setAttribute("value", this.current.settings.fieldColor);
         inputs.textColor.value = this.current.settings.titleColor;
-        inputs.colorbox_textColor.style.setProperty("background",this.current.settings.titleColor);
+        inputs.textColor.previousElementSibling.setAttribute("value", this.current.settings.titleColor);
         inputs.fontSize.value = this.current.settings.fontSize;
         inputs.lineHeight.value = this.current.settings.lineHeight;
         inputs.textLeft.value = this.current.settings.textLeft;
@@ -889,11 +877,11 @@ let  APP = new (class{
         inputs.illustrationY.value = this.current.illustration.y;
         inputs.illustrationTags.value = this.current.illustration.tags.join(", ");
         inputs.backBlurFigure.value = this.current.color.figure;
-        inputs.colorbox_backBlurFigure.style.setProperty("background","#"+this.current.color.figure);
+        inputs.backBlurFigure.nextElementSibling.setAttribute("value", "#" + this.current.color.figure);
         inputs.backBlurFirst.value = this.current.color.backFirst;
-        inputs.colorbox_backBlurFirst.style.setProperty("background","#"+this.current.color.backFirst);
+        inputs.backBlurFirst.nextElementSibling.setAttribute("value", "#" + this.current.color.backFirst);
         inputs.backBlurLast.value = this.current.color.backLast;
-        inputs.colorbox_backBlurLast.style.setProperty("background","#"+this.current.color.backLast);
+        inputs.backBlurLast.nextElementSibling.setAttribute("value", "#" + this.current.color.backLast);
         inputs.backBlurName.value = this.current.color.name;
     }
 })();
