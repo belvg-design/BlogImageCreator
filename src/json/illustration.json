@@ -637,15 +637,6 @@
 	{
 		"backBlur": "",
 		"descr": "-",
-		"name": "img_51",
-		"src": "./src/img/Img_51.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
-	},
-	{
-		"backBlur": "",
-		"descr": "-",
 		"name": "img_52",
 		"src": "./src/img/Img_52.png",
 		"x": 520,
@@ -880,15 +871,6 @@
 	{
 		"backBlur": "",
 		"descr": "-",
-		"name": "img_77",
-		"src": "./src/img/Img_77.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
-	},
-	{
-		"backBlur": "",
-		"descr": "-",
 		"name": "img_78",
 		"src": "./src/img/Img_78.png",
 		"x": 520,
@@ -1053,15 +1035,6 @@
 		"descr": "-",
 		"name": "img_61",
 		"src": "./src/img/Img_61.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
-	},
-	{
-		"backBlur": "",
-		"descr": "-",
-		"name": "img_64",
-		"src": "./src/img/Img_64.png",
 		"x": 520,
 		"y": 20,
 		"tags": []
