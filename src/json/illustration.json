@@ -286,14 +286,6 @@
 	},
 	{
 		"backBlur": "",
-		"name": "img_38",
-		"src": "./src/img/Img_38.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
-	},
-	{
-		"backBlur": "",
 		"name": "img_23",
 		"src": "./src/img/Img_23.png",
 		"x": 520,
