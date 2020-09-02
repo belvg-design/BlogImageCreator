@@ -1,27 +1,28 @@
 [
 	{
 		"name": "Default",
-		"auto" : false,
+		"auto" : true,
 		"textTop": 524,
 		"textLeft": 87,
-		"fieldColor": "#ff3366",
+		"fieldColor": "#fff000",
 		"textColor": "black",
-		"titleColor": "#ff3366",
+		"titleColor": "white",
 		"width": 1108,
-		"lineHeight": 62,
-		"fontSize": 32,
+		"lineHeight": 80,
+		"fontSize": 62,
 		"font": "Kanit",
 		"fontWeight" : "bold",
-		"text": "   Fuck the   \n S.Y.S.T.E.M\n        PLS         \n        PLS         ",
+		"text": "Hello\nThis is Image\nCreator",
 		"height": 590,
-		"showTextBox": true,
-		"highlightedLines" : [2],
+		"showTextBox": false,
+		"highlightedLines" : [1],
 		"box":{
 			"width": 550,
-			"height" : 350
+			"height" : 300
 		},
 		"showImage": true,
 		"imageScale": 1,
+		"settings" : true,
 		"imagePoint": {
 			"x" : 0,
 			"y" : 0

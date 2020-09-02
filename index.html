@@ -132,10 +132,9 @@
                 </div>
             </div>
         </div>
-        <span id="textSize"></span>
-        <span id="textWidth"></span>
         <div class="content-container column-container space-between">
             <div id="content" class="column-container">
+                <input type="checkbox" id="settings-switcher">
                 <div class="main-panel row-container space-between">
                     <div class="output-panel column-container">
                         <canvas id="canvas" width="100%" height="50%" class="canvas"></canvas>
@@ -146,16 +145,18 @@
                                 <button id="download">Download PNG</button>
                                 <button id="randomize" class="transparent">Random image</button>
                             </div>
-                            <div class="icon" id="openOptions">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-                                    <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
-                                    <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
-                                    <path d="M29.5996 11.2002C29.7484 11.2002 34.995 11.2002 37.5996 11.2002" stroke="#FF3366" stroke-width="1.2"/>
-                                    <path d="M10.4004 28.7998C10.2516 28.7998 5.00504 28.7998 2.40039 28.7998" stroke="#FF3366" stroke-width="1.2"/>
-                                    <path d="M29.8004 11.2002C29.8004 13.078 28.2782 14.6002 26.4004 14.6002C24.5226 14.6002 23.0004 13.078 23.0004 11.2002C23.0004 9.32243 24.5226 7.8002 26.4004 7.8002C28.2782 7.8002 29.8004 9.32243 29.8004 11.2002Z" stroke="#FF3366" stroke-width="1.2"/>
-                                    <path d="M10.6 29C10.6 27.1222 12.1222 25.6 14 25.6C15.8778 25.6 17.4 27.1222 17.4 29C17.4 30.8778 15.8778 32.4 14 32.4C12.1222 32.4 10.6 30.8778 10.6 29Z" stroke="#FF3366" stroke-width="1.2"/>
-                                </svg>
-                            </div>
+                            <label for="settings-switcher">
+                                <div class="icon" id="openOptions">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                        <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                        <path d="M37.5996 28.7998C37.2275 28.7998 24.1112 28.7998 17.5996 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                        <path d="M29.5996 11.2002C29.7484 11.2002 34.995 11.2002 37.5996 11.2002" stroke="#FF3366" stroke-width="1.2"/>
+                                        <path d="M10.4004 28.7998C10.2516 28.7998 5.00504 28.7998 2.40039 28.7998" stroke="#FF3366" stroke-width="1.2"/>
+                                        <path d="M29.8004 11.2002C29.8004 13.078 28.2782 14.6002 26.4004 14.6002C24.5226 14.6002 23.0004 13.078 23.0004 11.2002C23.0004 9.32243 24.5226 7.8002 26.4004 7.8002C28.2782 7.8002 29.8004 9.32243 29.8004 11.2002Z" stroke="#FF3366" stroke-width="1.2"/>
+                                        <path d="M10.6 29C10.6 27.1222 12.1222 25.6 14 25.6C15.8778 25.6 17.4 27.1222 17.4 29C17.4 30.8778 15.8778 32.4 14 32.4C12.1222 32.4 10.6 30.8778 10.6 29Z" stroke="#FF3366" stroke-width="1.2"/>
+                                    </svg>
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div class="palette-panel column-container">
@@ -275,6 +276,73 @@
                         <a class="operation">Download illustrations.json</a>
                         <a class="operation">Download backBlur.json</a>
                         <a class="operation" onclick="APP.getAllFiles()">Download all files</a>
+                    </div>
+                </div>
+                <div class="settings column-container margin-top-middle">
+                    <div class="row-container space-between align-center">
+                        <span class="title">Settings</span>
+                        <label for="settings-switcher"><span class="operation">Hide settings</span></label>
+                    </div>
+
+                    <div class="tabs-container margin-top-middle">
+                        <input class="radio" id="one" name="group" type="radio" checked>
+                        <input class="radio" id="two" name="group" type="radio">
+                        <input class="radio" id="three" name="group" type="radio">
+                        <input class="radio" id="four" name="group" type="radio">
+                        <div class="tabs-labels">
+                            <label id="one-label" for="one">Text</label>
+                            <!--label id="two-label" for="two">Illustration</label>
+                            <label id="three-label" for="three">Color</label>
+                            <label id="four-label" for="four">Additional</label-->
+                        </div>
+                        <div class="tabs">
+                            <div class="tab" id="one-tab">
+                                <div class="row-container align-flex-start">
+                                    <div class="column-container" style="width:250px">
+                                        <div class="checkbox margin-top-low">
+                                            <input type="checkbox" id="checkbox_1">
+                                            <label id="checkbox_1-label" for="checkbox_1">Auto resize Text</label>
+                                        </div>
+                                        <div class="checkbox margin-top-middle">
+                                            <input type="checkbox" id="checkbox_2">
+                                            <label id="checkbox_2-label" for="checkbox_2">Show Text Borders</label>
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:270px">
+                                        <div class="input">
+                                            <label>Highlighted Lines(with a comma)</label>
+                                            <input type="text" value="">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="input margin-top-middle">
+                                    <label>Image width</label>
+                                    <input type="number" value="100">
+                                </div>
+                                <div class="input color margin-top-middle">
+                                    <label>Text color</label>
+                                    <input type="text" value="100">
+                                </div>
+                                <div class="input color margin-top-middle">
+                                    <label>Text color</label>
+                                    <div class="row-container">
+                                        <input type="text">
+                                        <input type="color">
+                                    </div>
+                                </div>
+                                <div class="spoiler margin-top-high">
+                                    <input type="checkbox" id="spoiler_1">
+                                    <label for="spoiler_1">Additional settings</label>
+                                    <div class="content">
+                                        <span class="title">Hi there!</span> 
+                                    </div>
+                                </div>
+                            </div>
+                            <!--div class="tab" id="two-tab"></div>
+                            <div class="tab" id="three-tab"></div>
+                            <div class="tab" id="four-tab"></div-->
+                        </div>
                     </div>
                 </div>
                 <div class="illustrations-panel margin-top-middle">

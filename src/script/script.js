@@ -549,7 +549,6 @@ let  APP = new (class{
             delete this.allLoaded;
             this.defineTags();
             this.updateSuggestions("");
-            this.toggleOptions();
         })()
     }
     error(err){
@@ -557,12 +556,12 @@ let  APP = new (class{
     }
     closePreloader(){
         setTimeout(()=>{
-            preloader.style.setProperty("display","none");
-            content.style.setProperty("display","flex");
+            document.querySelector("#preloader").style.setProperty("display","none");
+            document.querySelector("#content").style.setProperty("display","flex");
         }, 1000);
     }
     toggleOptions(){
-        if(!this.nodes.optionsPanel.classList.toggle("hide"))
+        if(this.current.settings.settings && !this.nodes.optionsPanel.classList.toggle("hide"))
             this.updateOptions();
     }
     draw(){

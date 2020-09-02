@@ -5,7 +5,7 @@
   --margin-container-bottom: 0px;
   --margin-top-low:10px;
   --margin-top-middle:20px;
-  --margin-top-high:50px;
+  --margin-top-high:40px;
   --border-radius-low: 10px;
 
   --button-text-color: white;
@@ -380,8 +380,8 @@ textarea{
   font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 150%;
+  font-size: 30px;
+  line-height: 60px;
 
   color: #000000;
   margin-bottom: 5px;
@@ -403,7 +403,7 @@ textarea{
 
   font-family: Roboto, sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 300;
   font-size: 18px;
   line-height: 150%;
 
@@ -462,4 +462,280 @@ span.color-icon{
   border-radius: 6px;
   margin-left: 10px;
   margin-right: 0;
+}
+
+.settings::after {
+  content: "";
+  width: 60%;
+  height: 70%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 20%;
+  box-shadow: 0px 4px 200px rgb(0 0 0 / 0.15);
+}
+.settings {
+  display: none;
+  position: relative;
+  width: 100%; 
+  padding: 25px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 14px;
+}
+.text-bar{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.text-bar > span{
+  padding: 0 18px;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  line-height: 50px;
+
+  color: #000000;
+}
+.text-bar > span:first-of-type{
+  border-radius: 6px 0px 0px 6px;
+}
+.text-bar > span:last-of-type{
+  border-radius: 0px 6px 6px 0px;
+}
+.text-bar > span:hover{
+  background: #eee;
+}
+.text-bar > span:active, .text-bar > span.active{
+  background: #ff3366;
+  color: #fff;
+  border-color: #ff3366;
+}
+
+.tabs-container > input[type="radio"]{
+  display: none;
+}
+.tabs-labels{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.tabs-labels > label{
+  user-select: none;
+  padding: 0 18px;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  line-height: 50px;
+
+  color: #000000;
+}
+.tabs-labels > label:first-of-type{
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.tabs-labels > label:last-of-type{
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.tabs-labels > label:hover{
+  background: #eee;
+}
+#one:checked ~ .tabs-labels #one-label,
+#two:checked ~ .tabs-labels #two-label,
+#three:checked ~ .tabs-labels #three-label,
+#four:checked ~ .tabs-labels #four-label {
+  background: #ff3366;
+  color: #fff;
+  border-color: #ff3366;
+}
+.tabs > .tab{ display: none; padding-top: 30px; }
+.tabs > .tab:empty{ padding-top: 0; }
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  cursor: pointer;
+  user-select: none;
+}
+.checkbox > label{
+  cursor: pointer;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+
+  color: #000000;
+}
+.checkbox > input:checked {
+  background: #ff3366;
+  border-color: #ff3366;
+}
+.checkbox > input:hover:not(:checked) {
+  background: #eeeeee;
+}
+.checkbox > input {
+  height: 20px;
+  width: 20px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  -webkit-appearance: none;
+  margin-right: 10px;
+}
+.checkbox > input:checked:after {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid white;
+  border-top: 0;
+  border-left: 0;
+  left: 6px;
+  top: 2px;
+  transform: rotate(45deg);
+}
+
+.spoiler{
+}
+.spoiler > input{
+  display: none;
+}
+.spoiler > input:checked ~ label{
+  --r: 225deg;
+}
+.spoiler > input:checked ~ .content{
+  display: flex;
+}
+.spoiler > label{
+  display: flex;
+  align-items: center;
+  --r: 45deg;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 27px;
+  color: #FF3366;
+}
+.spoiler > label::after{
+  content: "";
+  display: inline-block;
+  width: 4.25px;
+  height: 4.25px;
+  border: 1.2px solid #ff3366;
+  border-left: none;
+  border-top: none;
+  transform: rotate(var(--r));
+  margin-left: 8px;
+}
+.spoiler > .content{
+  display: none;
+  flex-direction: column;
+}
+
+#settings-switcher{
+  display: none;
+}
+#settings-switcher:checked ~ .settings{
+  display: none;
+}
+
+.input > label, .input > input{
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}
+.input > label{
+  display: block;
+  margin-bottom: 5px;
+  width: fit-content;
+}
+.input > input{
+  height: 50px;
+  min-width: 100px;
+  width: 100%;
+  padding: 0 12px;
+
+  border: 1px solid #CCCCCC;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.input.color > input::after{
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+.input.color > div{
+
+}
+.input.color > div > input[type="text"]{
+  display: inline;
+  border: none;
+  padding: none;
+}
+.input.color > div > input[type="color"]{
+  border: none;
+  border-style: none;
+  padding: 0px 0px;
+  margin: 0px 0px;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  background: none;
+  background-clip: content-box;
+  font-size: 0px;
+  inline-size: 50px;
+  block-size: 50px;
+  appearance: button;
+  position: relative;
+}
+@supports selector(::-webkit-color-swatch) or selector(::-moz-color-swatch){
+  input[type="color"]::-webkit-color-swatch,
+  input[type="color"]::-moz-color-swatch{
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border:none;
+    box-sizing: border-box;
+  }
 }
