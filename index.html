@@ -145,7 +145,7 @@
                                 <button id="download">Download PNG</button>
                                 <button id="randomize" class="transparent">Random image</button>
                             </div>
-                            <label for="settings-switcher">
+                            <label for="settings-switcher" id="settings-switcher-label">
                                 <div class="icon" id="openOptions">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                                         <path d="M2.40039 11.2002C2.77248 11.2002 15.8888 11.2002 22.4004 11.2002" stroke="#FF3366" stroke-width="1.2"/>
@@ -250,13 +250,13 @@
                                     <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
                                         <div class="input">
                                             <label>Illustration width</label>
-                                            <input type="number" value="100" id="width" oninput="APP.options.changeSettings('width' ,this.value, true)">
+                                            <input type="number" value="100" id="width" oninput="APP.options.changeIllustrationBox(this.value)">
                                         </div>
                                     </div>
                                     <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
                                         <div class="input">
                                             <label>Illustration height</label>
-                                            <input type="number" value="100" id="height" oninput="APP.options.changeSettings('height' ,this.value, true)">
+                                            <input type="number" value="100" id="height" oninput="APP.options.changeIllustrationBox(this.value, true)">
                                         </div>
                                     </div>
                                 </div>
@@ -378,9 +378,9 @@
 
                             <div class="tab" id="four-tab">
                                 <div class="column-container">
-                                    <span class="operation" onclick="APP.getColorsJSON()">Download settings.json</span>
+                                    <span class="operation" onclick="APP.getSettingsJSON()">Download settings.json</span>
                                     <span class="operation margin-top-middle" onclick="APP.getIllustrationsJSON()">Download illustrations.json</span>
-                                    <span class="operation margin-top-middle" onclick="APP.getSettingsJSON()">Download backBlur.json</span>
+                                    <span class="operation margin-top-middle" onclick="APP.getColorsJSON()">Download backBlur.json</span>
                                     <span class="operation margin-top-middle" onclick="APP.getAllFiles()">Download all files</span>
                                 </div>
                             </div>
