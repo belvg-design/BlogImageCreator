@@ -273,180 +273,294 @@
 		"descr": "-",
 		"name": "img_21",
 		"src": "./src/img/Img_21.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 515,
+		"y": 24,
+		"tags": [
+			"Sale",
+			"UX",
+			"Customer",
+			"Pay",
+			"Card",
+			"Feedback"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_22",
 		"src": "./src/img/Img_22.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 509,
+		"y": 77,
+		"tags": [
+			"Mobile",
+			"Gift",
+			"Sale",
+			"Card"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_23",
 		"src": "./src/img/Img_23.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 620,
+		"y": 49,
+		"tags": [
+			"Customer",
+			"Display",
+			"Pay",
+			"Shop",
+			"Violet"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_24",
 		"src": "./src/img/Img_24.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 570,
+		"y": 86,
+		"tags": [
+			"University",
+			"Study",
+			"Books"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_25",
 		"src": "./src/img/Img_25.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 521,
+		"y": 136,
+		"tags": [
+			"Purse",
+			"Cash",
+			"Money",
+			"Coins",
+			"Pay"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_26",
 		"src": "./src/img/Img_26.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 489,
+		"y": 97,
+		"tags": [
+			"Team",
+			"Competition"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_27",
 		"src": "./src/img/Img_27.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 566,
+		"y": 24,
+		"tags": [
+			"Marketing",
+			"Sale",
+			"Analyze",
+			"Coins",
+			"Discussion"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_28",
 		"src": "./src/img/Img_28.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 460,
+		"y": 76,
+		"tags": [
+			"Farm",
+			"Customer",
+			"Natural"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_29",
 		"src": "./src/img/Img_29.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 471,
+		"y": 138,
+		"tags": [
+			"Marketing",
+			"Cash",
+			"Increase"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_30",
 		"src": "./src/img/Img_30.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 498,
+		"y": 130,
+		"tags": [
+			"Feadback",
+			"Talk",
+			"Display"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_31",
 		"src": "./src/img/Img_31.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 487,
+		"y": 78,
+		"tags": [
+			"Rocket",
+			"Display",
+			"Analyze",
+			"Increase"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_32",
 		"src": "./src/img/Img_32.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 516,
+		"y": 76,
+		"tags": [
+			"Talk",
+			"Discussion",
+			"Mobile",
+			"Network"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_33",
 		"src": "./src/img/Img_33.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 544,
+		"y": 59,
+		"tags": [
+			"Team",
+			"Discussion",
+			"Brainstorm",
+			"Idea",
+			"Marketing",
+			"Analyze"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_34",
 		"src": "./src/img/Img_34.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 493,
+		"y": 138,
+		"tags": [
+			"Develop",
+			"Mobile",
+			"UX",
+			"Design"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_35",
 		"src": "./src/img/Img_35.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 482,
+		"y": 107,
+		"tags": [
+			"Backend",
+			"Settings",
+			"Team",
+			"Develop"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_36",
 		"src": "./src/img/Img_36.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 560,
+		"y": 76,
+		"tags": [
+			"Cash",
+			"Coin",
+			"Dislplay",
+			"Sale",
+			"Customer",
+			"Pay",
+			"Shop",
+			"e-Commerce"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_37",
 		"src": "./src/img/Img_37.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 565,
+		"y": 54,
+		"tags": [
+			"Display",
+			"Sales",
+			"Pay",
+			"Cash",
+			"Money",
+			"Coins",
+			"Card",
+			"Analyze"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_39",
 		"src": "./src/img/Img_39.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 530,
+		"y": 71,
+		"tags": [
+			"Mobile",
+			"UX",
+			"Interface",
+			"Pay",
+			"Card",
+			"Gift",
+			"e-Commerce"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_40",
 		"src": "./src/img/Img_40.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 545,
+		"y": 52,
+		"tags": [
+			"e-Commerce",
+			"Card",
+			"Mobile",
+			"Gift",
+			"Interface"
+		]
 	},
 	{
 		"backBlur": "",
 		"descr": "-",
 		"name": "img_60",
 		"src": "./src/img/Img_60.png",
-		"x": 520,
-		"y": 20,
-		"tags": []
+		"x": 573,
+		"y": 76,
+		"tags": [
+			"Mobile",
+			"e-Commerce",
+			"Customer",
+			"Pay",
+			"Card"
+		]
 	},
 	{
 		"backBlur": "",
