@@ -62,6 +62,18 @@ body{
   width: 100%;
   max-width: 1200px;
 }
+#settings-switcher-label{
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition-duration: 0.25s;
+}
+#settings-switcher-label:hover{
+  background: #eee;
+}
 .container { 
   margin: var(--margin-container-top) var(--margin-container-right) var(--margin-container-bottom) var(--margin-container-left); 
   width: calc(100% - var(--margin-container-left) - var(--margin-container-right));

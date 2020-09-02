@@ -282,9 +282,9 @@ let  APP = new (class{
 
                 app.draw();
             },
-            changeIllustrationBox(e, height){
+            changeIllustrationBox(value, height){
                 let app = this.this,
-                    number = parseInt(e.value || "0");
+                    number = parseInt(value || "0");
                 if(height)
                     app.current.settings.height = isNaN(number)?app.current.settings.height:number;
                 else
@@ -538,7 +538,7 @@ let  APP = new (class{
                     this.current.color = this.backBlur[randomColor];
 
                     if(currentColorNode) currentColorNode.classList.remove("current");
-                    console.log(`[value="${this.backBlur[randomColor].name}"]`,this.nodes.colorsContainer.querySelector(`[value="${this.backBlur[randomColor].name}"]`));
+                    //console.log(`[value="${this.backBlur[randomColor].name}"]`,this.nodes.colorsContainer.querySelector(`[value="${this.backBlur[randomColor].name}"]`));
                     this.nodes.colorsContainer.querySelector(`[value="${this.backBlur[randomColor].name}"]`).classList.add("current");
 
                     if(currentIllustrationNode) currentIllustrationNode.classList.remove("current");
@@ -786,7 +786,7 @@ let  APP = new (class{
         let illustration = this.illustration.map(r=>{
             return {
                 "backBlur": r.backBlur,
-                "descr": r.descr,
+                "descr": r.descr || "-",
                 "name": r.name,
                 "src": r.src,
                 "x": r.x,
