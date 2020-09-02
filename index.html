@@ -134,7 +134,7 @@
         </div>
         <div class="content-container column-container space-between">
             <div id="content" class="column-container">
-                <input type="checkbox" id="settings-switcher">
+                <input type="checkbox" id="settings-switcher" checked>
                 <div class="main-panel row-container space-between">
                     <div class="output-panel column-container">
                         <canvas id="canvas" width="100%" height="50%" class="canvas"></canvas>
@@ -164,120 +164,7 @@
                         <ul id="colors" class="palette margin-top-low column-container"></ul>
                     </div>
                 </div>
-                <div class="options-panel column-container margin-top-middle hide" id="optionsPanel">
-                    <div class="row-container space-between">
-                        <span class="title">Settings</span>
-                        <a class="operation" onclick="APP.toggleOptions()">Close settings</a>
-                    </div>
-                    <span class="subtitle margin-top-middle">Text</span>
-                    <div class="options column-container">
-                        <div class="row-container">
-                            <div class="checkbox-container row-container">
-                                <span>Auto resize text</span><input id="autoResizeText" type="checkbox" oninput="APP.options.toggleAutoResize(this)">
-                            </div>
-                            <div class="checkbox-container row-container">
-                                <span>Show text borders</span><input id="showTextBox" type="checkbox" oninput="APP.options.toggleShowBorders(this)">
-                            </div>
-                            <div class="input-field full-width row-container">
-                                <span>Highlighted lines(comma separated line numbers)</span><input id="highlightedLines" type="text">
-                            </div>
-                        </div>
-                        <div class="row-container">
-                            <div class="colors-input-container row-container">
-                                <span>Highlighted text color</span><input id="highlightedTextColor" type="text" oninput="APP.options.changeTextColor(this)"><span id="colorbox_highlightedTextColor" class="color-icon"></span>
-                            </div>
-                            <div class="colors-input-container row-container">
-                                <span>Highlight color</span><input type="text" id="highlightColor" oninput="APP.options.changeFieldColor(this)"><span id="colorbox_highlightColor" class="color-icon"></span>
-                            </div>
-                            <div class="colors-input-container row-container">
-                                <span>Text color</span><input type="text" id="textColor" oninput="APP.options.changeTitleTextColor(this)"><span id="colorbox_textColor" class="color-icon"></span>
-                            </div>
-                        </div>
-                        <div class="row-container">
-                            <div class="input-field  row-container">
-                                <span>Font size</span><input id="fontSize" type="number" oninput="APP.options.changeFontSize(this)">
-                            </div>
-                            <div class="input-field  row-container">
-                                <span>Line height</span><input id="lineHeight" type="number" oninput="APP.options.changeLineHeight(this)">
-                            </div>
-                        </div>
-                        <div class="row-container">
-                            <div class="input-field  row-container">
-                                <span>Text left</span><input id="textLeft" type="number" oninput="APP.options.changeTextPos(this)">
-                            </div>
-                            <div class="input-field row-container">
-                                <span>Text top</span><input id="textTop" type="number" oninput="APP.options.changeTextPos(this, true)">
-                            </div>
-                        </div>
-                        <div class="row-container">
-                            <div class="input-field row-container">
-                                <span>Text border-box width</span><input id="textBoxWidth" type="number" oninput="APP.options.changeTextBox(this)">
-                            </div>
-                            <div class="input-field row-container">
-                                <span>Text border-box height</span><input id="textBoxHeight" type="number" oninput="APP.options.changeTextBox(this, true)">
-                            </div>
-                        </div>
-                    </div>
-                    <span class="subtitle margin-top-middle">Common</span>
-                    <div class="options row-container">
-                        <div class="input-field row-container">
-                            <span>Illustration width</span><input id="width" type="number" oninput="APP.options.changeIllustrationBox(this)">
-                        </div>
-                        <div class="input-field row-container">
-                            <span>Illustration height</span><input id="height" type="number" oninput="APP.options.changeIllustrationBox(this, true)">
-                        </div>
-                    </div>
-                    <span class="subtitle margin-top-middle">Illustration</span>
-                    <div class="options column-container">
-                        <div class="row-container">
-                            <div class="input-field half-width row-container">
-                                <span>Name</span><input id="illustrationName" type="text" oninput="APP.options.changeIllustration('name',this.value)">
-                            </div>
-                            <div class="input-field half-width row-container">
-                                <span>Description</span><input id="illustrationDescr" type="text" oninput="APP.options.changeIllustration('descr',this.value)">
-                            </div>
-                            <div class="input-field half-width row-container">
-                                <span>Source</span><input id="illustrationSrc" type="text" oninput="APP.options.changeIllustration('src',this.value)">
-                            </div>  
-                        </div>
-                        <div class="row-container">
-                            <div class="input-field row-container">
-                                <span>X</span><input id="illustrationX" type="number" oninput="APP.options.changeIllustration('x',this.value)">
-                            </div>
-                            <div class="input-field row-container">
-                                <span>Y</span><input id="illustrationY" type="number" oninput="APP.options.changeIllustration('y',this.value)">
-                            </div>
-                            <div class="input-field half-width full-width row-container">
-                                <span>Tags</span><input id="illustrationTags" type="text">
-                            </div>
-                        </div>
-                        <a class="operation"onclick="APP.addIllustration()">Add new Image</a>
-                    </div>
-                    <span class="subtitle margin-top-middle">Color</span>
-                    <div class="options column-container">
-                        <div class="row-container">
-                            <div class="colors-input-container row-container">
-                                <span>Figure color</span><input id="backBlurFigure" type="text" alt="figure"><span id="colorbox_backBlurFigure" class="color-icon"></span>
-                            </div>
-                            <div class="colors-input-container row-container">
-                                <span>Background top color</span><input id="backBlurFirst" type="text" alt="backFirst"><span id="colorbox_backBlurFirst" class="color-icon"></span>
-                            </div>
-                            <div class="colors-input-container row-container">
-                                <span>Background bottom color</span><input id="backBlurLast" type="text"  alt="backLast"><span id="colorbox_backBlurLast" class="color-icon"></span>
-                            </div>
-                        </div>
-                        <div class="input-field half-width row-container">
-                            <span>Name</span><input id="backBlurName" type="text" oninput="APP.options.changeColor('name',this.value)">
-                        </div>  
-                        <a class="operation"onclick="APP.addColor()">Add new Color</a>
-                    </div>
-                    <div class="row-container space-between margin-top-high">
-                        <a class="operation">Download settings.json</a>
-                        <a class="operation">Download illustrations.json</a>
-                        <a class="operation">Download backBlur.json</a>
-                        <a class="operation" onclick="APP.getAllFiles()">Download all files</a>
-                    </div>
-                </div>
+                
                 <div class="settings column-container margin-top-middle">
                     <div class="row-container space-between align-center">
                         <span class="title">Settings</span>
@@ -291,57 +178,212 @@
                         <input class="radio" id="four" name="group" type="radio">
                         <div class="tabs-labels">
                             <label id="one-label" for="one">Text</label>
-                            <!--label id="two-label" for="two">Illustration</label>
+                            <label id="two-label" for="two">Illustration</label>
                             <label id="three-label" for="three">Color</label>
-                            <label id="four-label" for="four">Additional</label-->
+                            <label id="four-label" for="four">Additional</label>
                         </div>
                         <div class="tabs">
                             <div class="tab" id="one-tab">
                                 <div class="row-container align-flex-start">
-                                    <div class="column-container" style="width:250px">
+                                    <div class="column-container" style="width:250px; margin-right: 30px;">
                                         <div class="checkbox margin-top-low">
-                                            <input type="checkbox" id="checkbox_1">
-                                            <label id="checkbox_1-label" for="checkbox_1">Auto resize Text</label>
+                                            <input type="checkbox" id="autoResizeText"  oninput="APP.options.toggleAutoResize(this)">
+                                            <label for="autoResizeText">Auto resize Text</label>
                                         </div>
                                         <div class="checkbox margin-top-middle">
-                                            <input type="checkbox" id="checkbox_2">
-                                            <label id="checkbox_2-label" for="checkbox_2">Show Text Borders</label>
+                                            <input type="checkbox" id="showTextBox" oninput="APP.options.toggleShowBorders(this)">
+                                            <label for="showTextBox">Show Text Borders</label>
                                         </div>
                                     </div>
                                     <div class="column-container" style="width:270px">
                                         <div class="input">
                                             <label>Highlighted Lines(with a comma)</label>
-                                            <input type="text" value="">
+                                            <input type="text" value="" id="highlightedLines">
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="input margin-top-middle">
-                                    <label>Image width</label>
-                                    <input type="number" value="100">
-                                </div>
-                                <div class="input color margin-top-middle">
-                                    <label>Text color</label>
-                                    <input type="text" value="100">
-                                </div>
-                                <div class="input color margin-top-middle">
-                                    <label>Text color</label>
-                                    <div class="row-container">
-                                        <input type="text">
-                                        <input type="color">
-                                    </div>
-                                </div>
+                                
                                 <div class="spoiler margin-top-high">
                                     <input type="checkbox" id="spoiler_1">
                                     <label for="spoiler_1">Additional settings</label>
                                     <div class="content">
-                                        <span class="title">Hi there!</span> 
+                                        <div class="row-container align-flex-start">
+                                            <div class="column-container" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                                <div class="input">
+                                                    <label>Font size</label>
+                                                    <input type="number" value="100"  id="fontSize"  oninput="APP.options.changeSettings('fontSize' ,this.value, true)">
+                                                </div>
+                                                <div class="input margin-top-middle">
+                                                    <label>Text border-box width</label>
+                                                    <input type="number" value="100" id="textBoxWidth" oninput="APP.options.changeTextBox(this)">
+                                                </div>
+                                            </div>
+                                            <div class="column-container" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                                <div class="input">
+                                                    <label>Line Height</label>
+                                                    <input type="number" value="100"id="lineHeight" oninput="APP.options.changeSettings('lineHeight' ,this.value, true)">
+                                                </div>
+                                                <div class="input margin-top-middle">
+                                                    <label>Text border-box height</label>
+                                                    <input type="number" value="100" id="textBoxHeight" oninput="APP.options.changeTextBox(this, true)">
+                                                </div>
+                                            </div>
+                                            <div class="column-container" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                                <div class="input">
+                                                    <label>Text left</label>
+                                                    <input type="number" value="100" id="textLeft"  oninput="APP.options.changeSettings('textLeft' ,this.value, true)">
+                                                </div>
+                                            </div>
+                                            <div class="column-container" style="width:calc((100% - 90px) / 4);">
+                                                <div class="input">
+                                                    <label>Text right</label>
+                                                    <input type="number" value="100" id="textTop"  oninput="APP.options.changeSettings('textTop' ,this.value, true)">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!--div class="tab" id="two-tab"></div>
-                            <div class="tab" id="three-tab"></div>
-                            <div class="tab" id="four-tab"></div-->
+
+                            <div class="tab" id="two-tab">
+                                <div class="row-container align-flex-start">
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Illustration width</label>
+                                            <input type="number" value="100" id="width" oninput="APP.options.changeSettings('width' ,this.value, true)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Illustration height</label>
+                                            <input type="number" value="100" id="height" oninput="APP.options.changeSettings('height' ,this.value, true)">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-container align-flex-start margin-top-middle">
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Left</label>
+                                            <input type="number" value="100" id="illustrationX" oninput="APP.options.changeIllustration('x',this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Top</label>
+                                            <input type="number" value="100" id="illustrationY" oninput="APP.options.changeIllustration('y',this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:calc((100% - 90px) / 3);">
+                                        <div class="input">
+                                            <label>Tags</label>
+                                            <input type="text" value="100" id="illustrationTags">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row-container align-flex-start margin-top-middle">
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Name</label>
+                                            <input type="text" value="100" id="illustrationName" oninput="APP.options.changeIllustration('name',this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:calc((100% - 90px) / 6); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Description</label>
+                                            <input type="text" value="100" id="illustrationDescr" oninput="APP.options.changeIllustration('descr',this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="width:calc((100% - 90px) / 5); margin-right: 30px;">
+                                        <div class="input">
+                                            <label>Source</label>
+                                            <input type="text" value="100" id="illustrationSrc" oninput="APP.options.changeIllustration('src',this.value)">
+                                        </div>
+                                    </div>
+                                    <div class="column-container" style="align-self: flex-end;padding-bottom: 11.5px;">
+                                        <span class="operation" onclick="APP.addIllustration()">+ Add New Image</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab" id="three-tab">
+                                <div class="row-container align-flex-start">
+
+                                    <div class="input color" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                        <label>Figure color</label>
+                                        <div class="row-container">
+                                            <input type="text" id="backBlurFigure" alt="figure">
+                                            <input type="color" for="backBlurFigure" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                        </div>
+                                    </div>
+                                    <div class="input color" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                        <label>Background top color</label>
+                                        <div class="row-container">
+                                            <input type="text" id="backBlurFirst" alt="backFirst">
+                                            <input type="color" for="backBlurFirst" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                        </div>
+                                    </div>
+                                    <div class="input color" style="width:calc((100% - 90px) / 4); margin-right: 30px;">
+                                        <label>Background bottom color</label>
+                                        <div class="row-container">
+                                            <input type="text" id="backBlurLast" alt="backLast">
+                                            <input type="color" for="backBlurLast" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row-container align-flex-start margin-top-middle">
+
+                                    <div class="input" style="width:calc((100% - 90px) / 5); margin-right: 30px;">
+                                        <label>Name</label>
+                                        <input type="text" value="-" id="backBlurName" oninput="APP.options.changeColor('name',this.value)">
+                                    </div>
+                                    <div class="column-container" style="align-self: flex-end;padding-bottom: 11.5px;">
+                                        <span class="operation" onclick="APP.addColor()">+ Add New Color</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="spoiler margin-top-high">
+                                    <input type="checkbox" id="spoiler_2">
+                                    <label for="spoiler_2">Additional settings</label>
+                                    <div class="content">
+
+                                        <div class="row-container align-flex-start">
+                                            <div class="input color" style="width:calc((100% - 90px) / 5); margin-right: 30px;">
+                                                <label>Highlighted text color</label>
+                                                <div class="row-container">
+                                                    <input type="text" for="highlightedTextColor"  oninput="APP.options.changeSettings('textColor', this.value)">
+                                                    <input type="color" id="highlightedTextColor" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                                </div>
+                                            </div>
+                                            <div class="input color" style="width:calc((100% - 90px) / 5); margin-right: 30px;">
+                                                <label>Highlight color</label>
+                                                <div class="row-container">
+                                                    <input type="text" for="highlightColor" oninput="APP.options.changeSettings('fieldColor', this.value)">
+                                                    <input type="color" id="highlightColor" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                                </div>
+                                            </div>
+                                            <div class="input color" style="width:calc((100% - 90px) / 5); margin-right: 30px;">
+                                                <label>Text color</label>
+                                                <div class="row-container">
+                                                    <input type="text" for="textColor" oninput="APP.options.changeSettings('titleColor', this.value)">
+                                                    <input type="color" id="textColor" oninput="this.previousElementSibling.dispatchEvent(new CustomEvent('input', {detail:{'value':this.value}}))">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab" id="four-tab">
+                                <div class="column-container">
+                                    <span class="operation" onclick="APP.getColorsJSON()">Download settings.json</span>
+                                    <span class="operation margin-top-middle" onclick="APP.getIllustrationsJSON()">Download illustrations.json</span>
+                                    <span class="operation margin-top-middle" onclick="APP.getSettingsJSON()">Download backBlur.json</span>
+                                    <span class="operation margin-top-middle" onclick="APP.getAllFiles()">Download all files</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -362,5 +404,10 @@
                 </div>
             </div>
         </div>
+        <script defer>
+            document.body.querySelectorAll(".input.color > div > input[type='text']").forEach(i=>i.addEventListener("input", (e)=>{
+                if(!e.isTrusted) e.target.value = e.detail.value;
+            }));
+        </script>
     </body>
 </html>
