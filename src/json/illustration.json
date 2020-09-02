@@ -1,90 +1,91 @@
 [
 	{
-		"x": 524,
+		"backBlur": "Navy",
+		"descr": "Data Analyze image",
 		"name": "img_1",
 		"src": "./src/img/img_1.png",
-		"descr": "Data Analyze image",
+		"x": 524,
+		"y": 16,
 		"tags": [
 			"Data Analyze",
 			"Display",
 			"Workspace",
 			"Violet"
-		],
-		"y": 16,
-		"backBlur": "Navy"
+		]
 	},
 	{
-		"x": 420,
+		"descr": "Mobile interface",
 		"name": "img_2",
 		"src": "./src/img/img_3.png",
-		"descr": "Mobile interface",
+		"x": 420,
+		"y": 112,
 		"tags": [
 			"Mobile",
 			"Interface",
 			"UX",
 			"Authorization",
 			"Violet"
-		],
-		"y": 112
+		]
 	},
 	{
-		"x": 500,
+		"descr": "E-commerce",
 		"name": "img_3",
 		"src": "./src/img/img_2.png",
-		"descr": "E-commerce",
+		"x": 500,
+		"y": 31,
 		"tags": [
 			"e-Commerce",
 			"Cash",
 			"Display",
 			"Cart"
-		],
-		"y": 31
+		]
 	},
 	{
-		"x": 510,
+		"descr": "E-commerce",
 		"name": "img_4",
 		"src": "./src/img/img_4.png",
-		"descr": "E-commerce",
+		"x": 510,
+		"y": -20,
 		"tags": [
 			"e-Commerce",
 			"Cash",
 			"UX",
 			"Customer",
 			"Pay"
-		],
-		"y": -20
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_5",
 		"src": "./src/img/img_5.png",
-		"descr": "-",
+		"x": 520,
+		"y": 23,
 		"tags": [
 			"Shopify",
 			"Display",
 			"e-Commerce",
 			"Green"
-		],
-		"y": 23
+		]
 	},
 	{
-		"x": 551,
+		"descr": "-",
 		"name": "img_6",
 		"src": "./src/img/img_6.png",
-		"descr": "-",
+		"x": 551,
+		"y": -82,
 		"tags": [
 			"Community",
 			"Team",
 			"Deadline",
 			"Calendar"
-		],
-		"y": -82
+		]
 	},
 	{
-		"x": 500,
+		"descr": "-",
 		"name": "img_7",
 		"src": "./src/img/img_7.png",
-		"descr": "-",
+		"x": 500,
+		"y": 60,
 		"tags": [
 			"Network",
 			"Wi-Fi",
@@ -92,14 +93,14 @@
 			"Violet",
 			"Blue",
 			"Discussion"
-		],
-		"y": 60
+		]
 	},
 	{
-		"x": 510,
+		"descr": "-",
 		"name": "img_8",
 		"src": "./src/img/img_8.png",
-		"descr": "-",
+		"x": 510,
+		"y": 60,
 		"tags": [
 			"Team",
 			"Discussion",
@@ -108,131 +109,131 @@
 			"Analyze",
 			"Marketing",
 			"Brainstorm"
-		],
-		"y": 60
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_9",
 		"src": "./src/img/img_9.png",
-		"descr": "-",
+		"x": 520,
+		"y": 20,
 		"tags": [
 			"Team",
 			"Discussion",
 			"Brainstorm",
 			"Marketing",
 			"Violet"
-		],
-		"y": 20
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_10",
 		"src": "./src/img/img_10.png",
-		"descr": "-",
+		"x": 520,
+		"y": 100,
 		"tags": [
 			"Customer",
 			"Gift",
 			"Pay"
-		],
-		"y": 100
+		]
 	},
 	{
-		"x": 490,
+		"descr": "-",
 		"name": "img_11",
 		"src": "./src/img/img_11.png",
-		"descr": "-",
+		"x": 490,
+		"y": 0,
 		"tags": [
 			"Shopify",
 			"Programming",
 			"Workspace",
 			"Tech"
-		],
-		"y": 0
+		]
 	},
 	{
-		"x": 460,
+		"descr": "-",
 		"name": "img_12",
 		"src": "./src/img/img_12.png",
-		"descr": "-",
+		"x": 460,
+		"y": 0,
 		"tags": [
 			"Display",
 			"e-Commerce",
 			"Cart",
 			"Feedback",
 			"Sale"
-		],
-		"y": 0
+		]
 	},
 	{
-		"x": 600,
+		"descr": "-",
 		"name": "img_13",
 		"src": "./src/img/img_13.png",
-		"descr": "-",
+		"x": 600,
+		"y": 20,
 		"tags": [
 			"Mobile",
 			"Pay",
 			"e-Commerce"
-		],
-		"y": 20
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_14",
 		"src": "./src/img/img_14.png",
-		"descr": "-",
+		"x": 520,
+		"y": 20,
 		"tags": [
 			"Sale",
 			"Mobile",
 			"Feedback",
 			"e-Commerce"
-		],
-		"y": 20
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_15",
 		"src": "./src/img/img_15.png",
-		"descr": "-",
+		"x": 520,
+		"y": 20,
 		"tags": [
 			"Mobile",
 			"UX",
 			"e-Commerce",
 			"Violet",
 			"Pay"
-		],
-		"y": 20
+		]
 	},
 	{
-		"x": 500,
+		"descr": "-",
 		"name": "img_16",
 		"src": "./src/img/img_16.png",
-		"descr": "-",
+		"x": 500,
+		"y": 20,
 		"tags": [
 			"Team",
 			"Deadline",
 			"Calendar"
-		],
-		"y": 20
+		]
 	},
 	{
-		"x": 520,
+		"descr": "-",
 		"name": "img_17",
 		"src": "./src/img/img_17.png",
-		"descr": "-",
+		"x": 520,
+		"y": 40,
 		"tags": [
 			"Programming",
 			"Workspace",
 			"Tech",
 			"Blue"
-		],
-		"y": 40
+		]
 	},
 	{
-		"x": 450,
+		"descr": "-",
 		"name": "img_18",
 		"src": "./src/img/img_18.png",
-		"descr": "-",
+		"x": 450,
+		"y": 60,
 		"tags": [
 			"Medicine",
 			"e-Commerce",
@@ -240,32 +241,695 @@
 			"Pay",
 			"Navy",
 			"UX"
-		],
-		"y": 60
+		]
 	},
 	{
-		"x": 550,
+		"descr": "-",
 		"name": "img_19",
 		"src": "./src/img/img_19.png",
-		"descr": "-",
+		"x": 550,
+		"y": 50,
 		"tags": [
 			"Review",
 			"Feedback",
 			"Star"
-		],
-		"y": 50
+		]
 	},
 	{
-		"x": 490,
+		"descr": "-",
 		"name": "img_20",
 		"src": "./src/img/img_20.png",
-		"descr": "-",
+		"x": 490,
+		"y": 50,
 		"tags": [
 			"Marketing",
 			"Analyze",
 			"Display",
 			"Violet"
-		],
-		"y": 50
+		]
+	},
+	{
+		"backBlur": "",
+		"name": "img_21",
+		"src": "./src/img/img_21.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_22",
+		"src": "./src/img/img_22.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_38",
+		"src": "./src/img/img_38.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_23",
+		"src": "./src/img/img_23.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_24",
+		"src": "./src/img/img_24.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_25",
+		"src": "./src/img/img_25.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_26",
+		"src": "./src/img/img_26.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_27",
+		"src": "./src/img/img_27.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_28",
+		"src": "./src/img/img_28.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_29",
+		"src": "./src/img/img_29.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_30",
+		"src": "./src/img/img_30.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_31",
+		"src": "./src/img/img_31.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_32",
+		"src": "./src/img/img_32.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_33",
+		"src": "./src/img/img_33.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_34",
+		"src": "./src/img/img_34.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_35",
+		"src": "./src/img/img_35.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_36",
+		"src": "./src/img/img_36.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_37",
+		"src": "./src/img/img_37.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_39",
+		"src": "./src/img/img_39.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_40",
+		"src": "./src/img/img_40.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_60",
+		"src": "./src/img/img_60.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_41",
+		"src": "./src/img/img_41.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_42",
+		"src": "./src/img/img_42.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_43",
+		"src": "./src/img/img_43.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_45",
+		"src": "./src/img/img_45.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_47",
+		"src": "./src/img/img_47.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_48",
+		"src": "./src/img/img_48.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_49",
+		"src": "./src/img/img_49.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_50",
+		"src": "./src/img/img_50.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_51",
+		"src": "./src/img/img_51.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_52",
+		"src": "./src/img/img_52.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_53",
+		"src": "./src/img/img_53.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_54",
+		"src": "./src/img/img_54.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_55",
+		"src": "./src/img/img_55.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_56",
+		"src": "./src/img/img_56.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_57",
+		"src": "./src/img/img_57.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_58",
+		"src": "./src/img/img_58.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_72",
+		"src": "./src/img/img_72.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_75",
+		"src": "./src/img/img_75.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_81",
+		"src": "./src/img/img_81.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_86",
+		"src": "./src/img/img_86.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_89",
+		"src": "./src/img/img_89.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_59",
+		"src": "./src/img/img_59.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_62",
+		"src": "./src/img/img_62.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_63",
+		"src": "./src/img/img_63.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_44",
+		"src": "./src/img/img_44.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_46",
+		"src": "./src/img/img_46.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_66",
+		"src": "./src/img/img_66.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_67",
+		"src": "./src/img/img_67.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_68",
+		"src": "./src/img/img_68.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_69",
+		"src": "./src/img/img_69.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_70",
+		"src": "./src/img/img_70.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_71",
+		"src": "./src/img/img_71.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_73",
+		"src": "./src/img/img_73.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_74",
+		"src": "./src/img/img_74.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_76",
+		"src": "./src/img/img_76.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_77",
+		"src": "./src/img/img_77.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_78",
+		"src": "./src/img/img_78.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_79",
+		"src": "./src/img/img_79.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_80",
+		"src": "./src/img/img_80.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_82",
+		"src": "./src/img/img_82.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_83",
+		"src": "./src/img/img_83.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_84",
+		"src": "./src/img/img_84.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_85",
+		"src": "./src/img/img_85.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_87",
+		"src": "./src/img/img_87.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_88",
+		"src": "./src/img/img_88.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_90",
+		"src": "./src/img/img_90.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_91",
+		"src": "./src/img/img_91.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_92",
+		"src": "./src/img/img_92.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_94",
+		"src": "./src/img/img_94.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_95",
+		"src": "./src/img/img_95.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_96",
+		"src": "./src/img/img_96.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_97",
+		"src": "./src/img/img_97.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_98",
+		"src": "./src/img/img_98.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_99",
+		"src": "./src/img/img_99.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_61",
+		"src": "./src/img/img_61.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_64",
+		"src": "./src/img/img_64.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_65",
+		"src": "./src/img/img_65.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_93",
+		"src": "./src/img/img_93.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_100",
+		"src": "./src/img/img_100.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_102",
+		"src": "./src/img/img_102.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_101",
+		"src": "./src/img/img_101.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
+	},
+	{
+		"backBlur": "",
+		"name": "img_103",
+		"src": "./src/img/img_103.png",
+		"x": 520,
+		"y": 20,
+		"tags": []
 	}
 ]

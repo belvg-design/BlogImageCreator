@@ -1,45 +1,45 @@
 [
 	{
-		"figure": "FEC738",
+		"figure": "ff0000",
 		"name": "Red",
-		"backFirst": "FF7861",
-		"backLast": "C13B11"
+		"backFirst": "ff4242",
+		"backLast": "ff33be"
 	},
 	{
-		"figure": "FF4D00",
+		"figure": "ffcdb8",
 		"name": "Orange",
-		"backFirst": "FFBA33",
-		"backLast": "F49B96"
+		"backFirst": "ff4733",
+		"backLast": "fff70a"
 	},
 	{
-		"figure": "9FFF9D",
-		"name": "Green",
-		"backFirst": "168409",
-		"backLast": "64B629"
+		"figure": "ffffff",
+		"name": "Yellow",
+		"backFirst": "ffe66b",
+		"backLast": "ffe66b"
 	},
 	{
-		"figure": "00FFA3",
-		"name": "Emerald",
-		"backFirst": "219C4C",
-		"backLast": "4DC052"
-	},
-	{
-		"figure": "F1F1F1",
-		"name": "Sky",
-		"backFirst": "85C0FC",
-		"backLast": "71B0F4"
+		"figure": "00ffa2",
+		"name": "Light green",
+		"backFirst": "78b677",
+		"backLast": "bbff00"
 	},
 	{
 		"figure": "DCDDFF",
-		"name": "Purple blue",
-		"backFirst": "5558F1",
-		"backLast": "7FA5FF"
+		"name": "Emerald",
+		"backFirst": "70d4ff",
+		"backLast": "10da57"
 	},
 	{
-		"figure": "00F0FF",
-		"name": "Blue",
-		"backFirst": "1285FA",
-		"backLast": "649AEA"
+		"figure": "e0ff47",
+		"name": "Green",
+		"backFirst": "019827",
+		"backLast": "b3ba5a"
+	},
+	{
+		"figure": "f0feff",
+		"name": "Sky",
+		"backFirst": "0080ff",
+		"backLast": "2e61ad"
 	},
 	{
 		"figure": "02F0FF",
@@ -50,18 +50,48 @@
 	{
 		"figure": "FD9DFF",
 		"name": "Purple",
-		"backFirst": "9761DB",
-		"backLast": "914DC0"
+		"backFirst": "cf4dff",
+		"backLast": "4f64c9"
 	},
 	{
-		"figure": "8A8A8A",
+		"figure": "f07070",
+		"name": "Dark purple",
+		"backFirst": "6633db",
+		"backLast": "91467d"
+	},
+	{
+		"figure": "7aebff",
+		"name": "Emerald to Blue",
+		"backFirst": "a6fb60",
+		"backLast": "224fb9"
+	},
+	{
+		"figure": "fbff00",
+		"name": "Orange to Purple",
+		"backFirst": "ffc31f",
+		"backLast": "ff33e7"
+	},
+	{
+		"figure": "2c00a3",
+		"name": "Purple to Blue",
+		"backFirst": "b761bd",
+		"backLast": "00fbff"
+	},
+	{
+		"figure": "bbff00",
+		"name": "Emerald to Orange",
+		"backFirst": "61f4ff",
+		"backLast": "ff7575"
+	},
+	{
+		"figure": "636363",
 		"name": "Black",
-		"backFirst": "393939",
-		"backLast": "272727"
+		"backFirst": "1f1f1f",
+		"backLast": "4d4d4d"
 	},
 	{
 		"figure": "A4A4A4",
-		"name": "default",
+		"name": "Gray",
 		"backFirst": "6D6D6D",
 		"backLast": "6B6B6B"
 	}

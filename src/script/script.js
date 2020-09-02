@@ -146,7 +146,7 @@ let  APP = new (class{
         this.nodes.tagsSuggestionBar = document.querySelector("#tags-suggestion-bar");
         this.nodes.colorsContainer = document.querySelector("#colors")
         this.nodes.randomize = document.querySelector("#randomize");
-        this.nodes.optionsPanel = document.querySelector("#optionsPanel");
+        this.nodes.optionsPanel = document.querySelector(".settings");
         
         this.context = canvas.getContext("2d",{alpha:false});
 
@@ -331,7 +331,8 @@ let  APP = new (class{
                 .then((i)=>{
                     app.current.readyBackBlur = i;
                     app.draw();
-                })
+                });
+                app.current.color.node.style.setProperty("background", `linear-gradient(90deg, #${app.current.color.backFirst}, #${app.current.color.backLast})`);
             }
         };
         this.allLoadedMain = false;
@@ -877,11 +878,11 @@ let  APP = new (class{
         inputs.illustrationY.value = this.current.illustration.y;
         inputs.illustrationTags.value = this.current.illustration.tags.join(", ");
         inputs.backBlurFigure.value = this.current.color.figure;
-        inputs.backBlurFigure.nextElementSibling.setAttribute("value", "#" + this.current.color.figure);
+        inputs.backBlurFigure.nextElementSibling.value = "#" + this.current.color.figure;
         inputs.backBlurFirst.value = this.current.color.backFirst;
-        inputs.backBlurFirst.nextElementSibling.setAttribute("value", "#" + this.current.color.backFirst);
+        inputs.backBlurFirst.nextElementSibling.value = "#" + this.current.color.backFirst;
         inputs.backBlurLast.value = this.current.color.backLast;
-        inputs.backBlurLast.nextElementSibling.setAttribute("value", "#" + this.current.color.backLast);
+        inputs.backBlurLast.nextElementSibling.value = "#" + this.current.color.backLast;
         inputs.backBlurName.value = this.current.color.name;
     }
 })();
