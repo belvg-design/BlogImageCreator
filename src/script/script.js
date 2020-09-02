@@ -549,6 +549,7 @@ let  APP = new (class{
             delete this.allLoaded;
             this.defineTags();
             this.updateSuggestions("");
+            this.nodes.randomize.click();
         })()
     }
     error(err){
